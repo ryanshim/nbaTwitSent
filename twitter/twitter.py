@@ -1,6 +1,5 @@
 import sqlite3
 import json
-import logging
 from tweepy import Stream
 from tweepy import OAuthHandler
 from tweepy import StreamListener
@@ -57,7 +56,7 @@ class listener(StreamListener):
 
     def on_error(self, status_code):
         # TODO: change credentials or restart process in an hour
-        print(status_code)
+        logger.info("Error" + status_code)
         if status_code == 420: # hit the Twitter rate limit
             return False
 
