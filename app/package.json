@@ -1,0 +1,17 @@
+{
+  "name": "nbatwit",
+  "version": "1.0.0",
+  "description": "Class project for CSUF 462 Spring 18. The project goal is to perform sentiment analysis on NBA tweets.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryanshim/nbaTwitSent.git"
+  },
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
