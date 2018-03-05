@@ -36,3 +36,4 @@ credentials.py
 *.pyc
 *.db
 *.swp
+app/node_modules/*
