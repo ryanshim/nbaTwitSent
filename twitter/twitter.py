@@ -17,24 +17,28 @@ auth.set_access_token(access_token, access_token_secret)
 # create a stream listener
 class listener(StreamListener):
     def on_data(self, data):
-        all_data = json.loads(data)
+        if 'event' in data: # only handle status posts, ignore all other events
+            all_data = json.loads(data)
 
-        date = all_data["created_at"] # maybe use timestamp_ms
-        user = all_data["user"]["screen_name"]
-        tweet = all_data["text"]
+            date = all_data["created_at"] # maybe use timestamp_ms
+            user = all_data["user"]["screen_name"]
+            tweet = all_data["text"]
 
-        # TODO: figure out how to extract the search tag and get the team
-        t = (date, "team", "tag", user, tweet, None)
+            # TODO: figure out how to extract the search tag and get the team
+            # TODO: filter out repeats?
+            t = (date, "team", "tag", user, tweet, None)
 
-        c.execute("INSERT INTO tweets VALUES (?,?,?,?,?,?)", t)
-        print(data)
+            c.execute("INSERT INTO tweets VALUES (?,?,?,?,?,?)", t)
+            conn.commit()
 
-        conn.commit()
-        return True
+    def on_error(self, status_code):
+        # TODO: change credentials or restart process in an hour
+        if status_code == 420: # hit the Twitter rate limit
+            return False
 
 # start tracking tweets
 twitterStream = Stream(auth, listener())
-twitterStream.filter(track=[
+twitterStream.filter(languages="en", track=[
     # Western
     "@houstonrockets", "#rockets",
     "@warriors", "#dubnation",
