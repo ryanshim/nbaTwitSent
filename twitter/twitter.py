@@ -56,7 +56,7 @@ class listener(StreamListener):
 
     def on_error(self, status_code):
         # TODO: change credentials or restart process in an hour
-        logger.info("Error" + status_code)
+        logger.info("Error {0}".format(status_code))
         if status_code == 420: # hit the Twitter rate limit
             return False
 
