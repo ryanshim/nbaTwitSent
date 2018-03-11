@@ -1,11 +1,15 @@
+import os
 import sqlite3
 import json
+import multiprocessing
+import time
 from tweepy import Stream
 from tweepy import OAuthHandler
 from tweepy import StreamListener
 from credentials import *
 from logger import *
 
+db_path = '/data/data.db'
 tracking = {
     # Western
     "@houstonrockets": "rockets", "#rockets": "rockets",
@@ -22,16 +26,11 @@ tracking = {
     "@washwizards": "wizards", "dcfamily": "wizards"
 }
 
-# connect to the database
-conn = sqlite3.connect("../data/data.db", uri=True)
-c = conn.cursor()
+class Listener(StreamListener):
+    def __init__(self, db):
+        super().__init__(self)
+        self.db = db
 
-# connect to twitter
-auth = OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_token, access_token_secret)
-
-# create a stream listener
-class listener(StreamListener):
     def on_data(self, data):
         all_data = json.loads(data)
 
@@ -49,8 +48,7 @@ class listener(StreamListener):
                 if k in tweet:
                     t = (date, v, k, user, tweet, None)
 
-            c.execute("INSERT INTO tweets VALUES (?,?,?,?,?,?)", t)
-            conn.commit()
+            self.db.insert("INSERT INTO tweets VALUES (?,?,?,?,?,?)", t)
             logger.info("Stored tweet")
         logger.debug(all_data)
 
@@ -60,6 +58,49 @@ class listener(StreamListener):
         if status_code == 420: # hit the Twitter rate limit
             return False
 
-# start tracking tweets
-twitterStream = Stream(auth, listener())
-twitterStream.filter(languages=["en"], track=tracking.keys())
+class DBManager(object):
+    def __init__(self, path, uri=True):
+        self.conn = sqlite3.connect(path, uri=uri)
+        self.cur = self.conn.cursor()
+        logger.info("Database connection opened")
+
+    def query(self, query):
+        self.cur.execute(arg)
+        self.conn.commit()
+        return self.cur
+    
+    def insert(self, query, values):
+        self.cur.execute(query, values)
+        self.conn.commit()
+        return self.cur
+
+    def __del__(self):
+        self.conn.close()
+        logger.info("Database connection closed")
+
+
+def twitter_stream(database):
+
+    # connect to twitter
+    auth = OAuthHandler(consumer_key, consumer_secret)
+    auth.set_access_token(access_token, access_token_secret)
+
+    # start tracking tweets
+    twitterStream = Stream(auth, Listener(database))
+    twitterStream.filter(languages=["en"], track=tracking.keys())
+
+if __name__ == '__main__':
+    logger.info("Begin collecting tweets")
+    os.chdir('..')
+
+    # connect to database
+    db = DBManager(os.getcwd() + db_path)
+
+    p = multiprocessing.Process(target=twitter_stream, name="TwitterStream", args=(db,))
+    p.start()
+    p.join(14400) # run for 4 hours
+    p.terminate()
+
+    del db
+    logger.info("Stop collecting tweets")
+
