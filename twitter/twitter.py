@@ -3,6 +3,7 @@ import sqlite3
 import json
 import multiprocessing
 import time
+from textblob import TextBlob
 from tweepy import Stream
 from tweepy import OAuthHandler
 from tweepy import StreamListener
@@ -43,14 +44,21 @@ class Listener(StreamListener):
             if all_data["truncated"]:
                 tweet = all_data["extended_tweet"]["full_text"]
 
-            t = (date, "", "", user, tweet, None)
+            score = 0
+            blob = TextBlob(tweet)
+            for sentence in blob.sentences:
+                score += sentence.sentiment.polarity
+
+            #t = (date, "", "", user, tweet, None)
+            t = (date, "", "", user, tweet, score)
             for k, v in tracking.items():
                 if k in tweet:
-                    t = (date, v, k, user, tweet, None)
+                    #t = (date, v, k, user, tweet, None)
+                    t = (date, v, k, user, tweet, score)
 
             self.db.insert("INSERT INTO tweets VALUES (?,?,?,?,?,?)", t)
-            logger.info("Stored tweet")
-        logger.debug(all_data)
+            #logger.info("Stored tweet")
+        #logger.debug(all_data)
 
     def on_error(self, status_code):
         # TODO: change credentials or restart process in an hour
