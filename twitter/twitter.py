@@ -52,7 +52,7 @@ class Listener(StreamListener):
             #t = (date, "", "", user, tweet, None)
             t = (date, "", "", user, tweet, score)
             for k, v in tracking.items():
-                if k in tweet:
+                if k in tweet.lower():
                     #t = (date, v, k, user, tweet, None)
                     t = (date, v, k, user, tweet, score)
 
