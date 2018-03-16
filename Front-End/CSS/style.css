@@ -278,18 +278,6 @@ label{
   min-height: 400px;
   /*outline-style:dotted;*/
 }
-
-.el-1 {
-  /* styles for .el-1 here */
-}
-
-.el-2 {
-  /* styles for .el-2 here */
-}
-
-
-
-
 .el-111, .el-112, .el-113, .el-114 {
   float: left;
   margin-left:1.5%;
@@ -298,32 +286,8 @@ label{
   height: 100%;
   text-align: center;
   min-height: 169px;
-  outline-style:dotted;
+  /*outline-style:dotted;*/
 }
-
-.el-111 {
-  /* styles for .el-1 here */
-}
-
-.el-112 {
-  /* styles for .el-2 here */
-}
-.el-113 {
-  /* styles for .el-1 here */
-}
-
-.el-114 {
-  /* styles for .el-2 here */
-}
-
-
-
-
-
-
-
-
-
 .mag-innert-left {
     background-color: #fff;
     padding: 1em 1em;
