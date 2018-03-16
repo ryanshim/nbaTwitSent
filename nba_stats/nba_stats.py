@@ -9,7 +9,7 @@ team_ids = ['TOR', 'BOS', 'CLE', 'IND', 'WAS',
         'HOU', 'GSW', 'NOP', 'POR', 'MIN']
 
 def populate_teams():
-    conn = sqlite3.connect('data_team.db')
+    conn = sqlite3.connect('../data/data_team.db')
     c = conn.cursor()
 
     for team_id in team_ids:
@@ -28,7 +28,7 @@ def populate_teams():
     conn.close()
 
 def populate_players():
-    conn = sqlite3.connect('data_team.db')
+    conn = sqlite3.connect('../data/data_team.db')
     c = conn.cursor()
 
     for team_id in team_ids:
