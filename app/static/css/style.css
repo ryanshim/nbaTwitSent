@@ -278,15 +278,6 @@ label{
   min-height: 400px;
   /*outline-style:dotted;*/
 }
-
-.el-1 {
-  /* styles for .el-1 here */
-}
-
-.el-2 {
-  /* styles for .el-2 here */
-}
-
 .el-111, .el-112, .el-113, .el-114 {
   float: left;
   margin-left:1.5%;
@@ -297,7 +288,6 @@ label{
   min-height: 169px;
   /*outline-style:dotted;*/
 }
-
 .mag-innert-left {
     background-color: #fff;
     padding: 1em 1em;
@@ -1566,58 +1556,6 @@ a.pp-title:hover {
 	width:77%;
 	text-align: left;
 }
-/*-------Popup container */
-.el-111 {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-}
-
-/* The actual popup (appears on top) */
-.el-111 .popuptext {
-    visibility: hidden;
-    width: 100%;
-    background-color: #92a8d1;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 8px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 100%;
-    margin-left: -80px;
-}
-
-/* Popup arrow */
-.el-111 .popuptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
-}
-
-/* Toggle this class when clicking on the popup container (hide and show the popup) */
-.el-111 .show {
-    visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s
-}
-
-/* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
-    from {opacity: 0;} 
-    to {opacity: 1;}
-}
-
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity:1 ;}
-}
 /*--about--*/
 .banner.two {
 	    /*background: url(../images/banner.jpg)no-repeat 0px 0px;*/
@@ -1673,15 +1611,12 @@ a.pp-title:hover {
     padding: 0 5px;
     margin-bottom: 0.7em;
 }
-.standings-main{
-	background: rgba(255, 255, 255, 0.92);
-}
 /* Common style */
 .grid figure {
        position: relative;
     float: left;
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.92);
+    background: rgba(234, 209, 18, 0.92);
     text-align: center;
     cursor: pointer;
 }
@@ -2037,6 +1972,17 @@ p.sign {
 	}
 }
 @media (max-width:1280px){
+	.banner-info h3 {
+		font-size: 2.3em;
+		line-height: 1.6em;
+   }
+   .banner-info {
+		text-align: right;
+		padding: 1em 4em;
+		float: right;
+		width: 50%;
+		margin-top: 7em;
+	}
 	.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
 		margin-left: 20px;
 	}
