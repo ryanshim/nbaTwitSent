@@ -13,6 +13,7 @@ c.execute("UPDATE tweets SET team = 'BOS' WHERE team = 'celtics'")
 c.execute("UPDATE tweets SET team = 'CLE' WHERE team = 'cavaliers'")
 c.execute("UPDATE tweets SET team = 'IND' WHERE team = 'pacers'")
 c.execute("UPDATE tweets SET team = 'WAS' WHERE team = 'wizards'")
+c.execute("DELETE FROM tweets WHERE team = ''");
 
 conn.commit()
 conn.close()
