@@ -13,7 +13,10 @@ c.execute("UPDATE tweets SET team = 'BOS' WHERE team = 'celtics'")
 c.execute("UPDATE tweets SET team = 'CLE' WHERE team = 'cavaliers'")
 c.execute("UPDATE tweets SET team = 'IND' WHERE team = 'pacers'")
 c.execute("UPDATE tweets SET team = 'WAS' WHERE team = 'wizards'")
-c.execute("DELETE FROM tweets WHERE team = ''");
+c.execute("DELETE FROM tweets WHERE team = ''")
+
+c.execute("UPDATE tweets SET date = replace(date, 'Mar', '03') WHERE date LIKE '%Mar%'")
+c.execute("UPDATE tweets SET date = substr(date,26,4)||'-'||substr(date,5,2)||'-'||substr(date,8,2)||'T'||substr(date,11,8)")
 
 conn.commit()
 conn.close()

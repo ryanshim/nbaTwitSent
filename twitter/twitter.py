@@ -3,6 +3,7 @@ import sqlite3
 import json
 import multiprocessing
 import time
+from datetime import datetime
 from textblob import TextBlob
 from tweepy import Stream
 from tweepy import OAuthHandler
@@ -38,22 +39,22 @@ class Listener(StreamListener):
         if "retweeted_status" not in all_data \
         and "RT @" not in all_data["text"] \
         and "rt @" not in all_data["text"]:
-            date = all_data["created_at"] # maybe use timestamp_ms
+            created = all_data["created_at"] # UTC string
+            date = datetime.strptime(created, "%a %b %d %H:%M:%S %z %Y").isoformat()
             user = all_data["user"]["screen_name"]
             tweet = all_data["text"]
             if all_data["truncated"]:
                 tweet = all_data["extended_tweet"]["full_text"]
+
 
             score = 0
             blob = TextBlob(tweet)
             for sentence in blob.sentences:
                 score += sentence.sentiment.polarity
 
-            #t = (date, "", "", user, tweet, None)
             t = (date, "", "", user, tweet, score)
             for k, v in tracking.items():
                 if k in tweet.lower():
-                    #t = (date, v, k, user, tweet, None)
                     t = (date, v, k, user, tweet, score)
 
             self.db.insert("INSERT INTO tweets VALUES (?,?,?,?,?,?)", t)
