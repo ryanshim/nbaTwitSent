@@ -13,18 +13,18 @@ from logger import *
 db_path = '/data/data.db'
 tracking = {
     # Western
-    "@houstonrockets": "rockets", "#rockets": "rockets",
-    "@warriors": "warriors", "#dubnation": "warriors",
-    "@trailblazers": "blazers", "#ripcity": "blazers",
-    "@pelicansnba": "pelicans", "#doitbig": "pelicans",
-    "@timberwolves": "timberwolves", "#alleyesnorth": "timberwolves",
+    "@houstonrockets": "HOU", "#rockets": "HOU",
+    "@warriors": "GSW", "#dubnation": "GSW",
+    "@trailblazers": "POR", "#ripcity": "POR",
+    "@pelicansnba": "NOP", "#doitbig": "NOP",
+    "@timberwolves": "MIN", "#alleyesnorth": "MIN",
 
     # Eastern
-    "@raptors": "raptors", "#wethenorth": "raptors",
-    "@celtics": "celtics", "#celtics": "celtics",
-    "@cavs": "cavaliers", "#allforone": "cavaliers",
-    "@pacers": "pacers", "#gopacers": "pacers",
-    "@washwizards": "wizards", "dcfamily": "wizards"
+    "@raptors": "TOR", "#wethenorth": "TOR",
+    "@celtics": "BOS", "#celtics": "BOS",
+    "@cavs": "CLE", "#allforone": "CLE",
+    "@pacers": "IND", "#gopacers": "IND",
+    "@washwizards": "WAS", "dcfamily": "WAS"
 }
 
 class Listener(StreamListener):
