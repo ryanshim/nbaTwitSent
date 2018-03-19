@@ -43,7 +43,7 @@ router.get('/record', function(req, res) {
     stats_query(sql, params, res);
 });
 router.get('/tweetscore/hour', function(req, res) {
-    var sql = "SELECT team, datetime(date) as date, AVG(score) as sentiment, COUNT(score) as count FROM tweets GROUP BY team, datetime(date)";
+    var sql = "SELECT team, strftime('%Y-%m-%d %H', date) as date, AVG(score) as sentiment, COUNT(score) as count FROM tweets GROUP BY team, strftime('%Y-%m-%d %H', date)";
     var params = [];
     tweets_query(sql, params, res);
 });
@@ -68,7 +68,7 @@ router.get('/:team/record', function(req, res) {
     stats_query(sql, params, res);
 });
 router.get('/:team/tweetscore/hour', function(req, res) {
-    var sql = "SELECT team, datetime(date) as date, AVG(score) as sentiment, COUNT(score) as count FROM tweets WHERE team = ? GROUP BY datetime(date)";
+    var sql = "SELECT team, strftime('%Y-%m-%d %H', date) as date, AVG(score) as sentiment, COUNT(score) as count FROM tweets WHERE team = ? GROUP BY strftime('%Y-%m-%d %H', date)";
     var params = [req.params.team.toUpperCase()];
     tweets_query(sql, params, res);
 });
