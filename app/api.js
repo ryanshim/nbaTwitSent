@@ -16,7 +16,7 @@ router.get('/', function(req, res) {
 /api/:team/tweetscore\treturns a team's average twitter sentiment score\n\
 /api/:team/tweetscore/day\treturns a team's average twitter sentiment score by day\n\
 /api/:team/tweetscore/hour\treturns a team's average twitter sentiment score by hour\n\n\
-replace :team with the 3 varter code\n\
+replace :team with the 3 letter code\n\
 BOS Boston Celtics\n\
 CLE Cleveland Cavaliers\n\
 GSW Golden State Warriors\n\
@@ -24,6 +24,7 @@ HOU Houston Rockets\n\
 IND Indiana Pacers\n\
 MIN Minnesota Timberwolves\n\
 NOP New Orleans Pelicans\n\
+POR Portland Trail Blazers\n\
 TOR Toronto Raptors\n\
 WAS Washington Wizards\n\
 ";
