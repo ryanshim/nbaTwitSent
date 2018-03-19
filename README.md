@@ -43,7 +43,7 @@ This project performs sentiment analysis on the NBA derived from Twitter data.
 * Make use of API
 
 ##### Backend:
-* Add more API calls
+* Add more API calls, fix hourly (currently doing by second)
 * nba_stats needs to run daily
 * Code cleanup
  * combine db_prep and create_db
