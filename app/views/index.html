@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>NBA League Winner Prediction using Sentimental Analysis</title>
-<link rel="shortcut icon" type="image/x-icon" href="Images/favicon.ico" />
+<link rel="shortcut icon" type="image/x-icon" href="../static/images/favicon.ico" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Basketball Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -24,6 +24,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				});
 			});
 </script>
+
 </head>
 <body> 
  <div class="container">
@@ -58,7 +59,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   <div class="banner">
 	    <div class="banner-inner">
 			<div class="el-1"><h3>Eastern Conference</h3></br>
-				<div class="el-111" onclick="popupFunction()">
+				<div class="el-111" onclick="popupFunction('http://localhost:5000/api/tor/roster','e1-11')">
 				<!--popup container for team el-111-->
 				<a href="#myModal-11" role="button" data-toggle="modal"><img src="images/raptors.png"></a>
 					<div id="myModal-11" class="modal fade" role="dialog">
@@ -70,35 +71,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<h4 class="modal-title">TORONTO RAPTORS</h4>
 							</div>
 						<div class="modal-body">
-							<table class="table">
+							<table id="firstTable" class="table">
 							  <thead class="thead-inverse">
 							   <thead>
 								<tr>
 								  <th scope="col">No</th>
 								  <th scope="col">Name</th>
-								  <th scope="col">Height | Weight</th>
 								  <th scope="col">Position</th>
+								  <th scope="col">Height</th>
+								  <th scope="col">Weight</th>
 								</tr>
 							  </thead>
-							  <tbody>
-								<tr>
-								  <td>3</td>
-								  <td>OG Anunoby</td>
-								  <td>6 ft 8 in | 235 lbs</td>
-								  <td>Foward</td>
-								</tr>
-								<tr>
-								  <td>4</td>
-								  <td>Lorenzo Brown</td>
-								  <td>6 ft 5 in | 189 lbs</td>
-								  <td>Guard</td>
-								</tr>
-								<tr>
-								  <td>10</td>
-								  <td>DeMar DeRozan</td>
-								  <td>6 ft 7 in | 220 lbs</td>
-								  <td>Guard</td>
-								</tr>
+							  <tbody id="e1-11">
+								<!--api call-->
 							  </tbody>
 							</table>
 						</div>
@@ -106,7 +91,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 				</div>
 			</div>
-			<div class="el-112" onclick="popupFunction()">
+			<div class="el-112" onclick="popupFunction('http://localhost:5000/api/bos/roster','e1-12')">
 			<!--popup container for team el-112-->
 				<a href="#myModal-12" role="button" data-toggle="modal"><img src="images/celtics.png"></a>
 					<div id="myModal-12" class="modal fade" role="dialog">
@@ -124,29 +109,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<tr>
 								  <th scope="col">No</th>
 								  <th scope="col">Name</th>
-								  <th scope="col">Height | Weight</th>
 								  <th scope="col">Position</th>
+								  <th scope="col">Height</th>
+								  <th scope="col">Weight</th>
 								</tr>
 							  </thead>
-							  <tbody>
-								<tr>
-								  <td>3</td>
-								  <td>OG Anunoby</td>
-								  <td>6 ft 8 in | 235 lbs</td>
-								  <td>Foward</td>
-								</tr>
-								<tr>
-								  <td>4</td>
-								  <td>Lorenzo Brown</td>
-								  <td>6 ft 5 in | 189 lbs</td>
-								  <td>Guard</td>
-								</tr>
-								<tr>
-								  <td>10</td>
-								  <td>DeMar DeRozan</td>
-								  <td>6 ft 7 in | 220 lbs</td>
-								  <td>Guard</td>
-								</tr>
+							  <tbody id="e1-12">
+								<!--api call-->
 							  </tbody>
 							</table>
 						</div>
@@ -154,7 +123,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 				</div>
 			</div>
-			<div class="el-113" onclick="popupFunction()">
+			<div class="el-113" onclick="popupFunction('http://localhost:5000/api/ind/roster','e1-13')">
 			<!--popup container for team el-113-->
 				<a href="#myModal-13" role="button" data-toggle="modal"><img src="images/indiana.png"></a>
 					<div id="myModal-13" class="modal fade" role="dialog">
@@ -172,29 +141,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<tr>
 								  <th scope="col">No</th>
 								  <th scope="col">Name</th>
-								  <th scope="col">Height | Weight</th>
 								  <th scope="col">Position</th>
+								  <th scope="col">Height</th>
+								  <th scope="col">Weight</th>
 								</tr>
 							  </thead>
-							  <tbody>
-								<tr>
-								  <td>3</td>
-								  <td>OG Anunoby</td>
-								  <td>6 ft 8 in | 235 lbs</td>
-								  <td>Foward</td>
-								</tr>
-								<tr>
-								  <td>4</td>
-								  <td>Lorenzo Brown</td>
-								  <td>6 ft 5 in | 189 lbs</td>
-								  <td>Guard</td>
-								</tr>
-								<tr>
-								  <td>10</td>
-								  <td>DeMar DeRozan</td>
-								  <td>6 ft 7 in | 220 lbs</td>
-								  <td>Guard</td>
-								</tr>
+							  <tbody id="e1-13">
+								<!--api call-->
 							  </tbody>
 							</table>
 						</div>
@@ -202,7 +155,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 				</div>
 			</div>
-			<div class="el-114" onclick="popupFunction()">
+			<div class="el-114" onclick="popupFunction('http://localhost:5000/api/cle/roster','e1-14')">
 			<!--popup container for team el-114-->
 				<a href="#myModal-14" role="button" data-toggle="modal"><img src="images/cavaliers.png"></a>
 					<div id="myModal-14" class="modal fade" role="dialog">
@@ -220,29 +173,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<tr>
 								  <th scope="col">No</th>
 								  <th scope="col">Name</th>
-								  <th scope="col">Height | Weight</th>
 								  <th scope="col">Position</th>
+								  <th scope="col">Height</th>
+								  <th scope="col">Weight</th>
 								</tr>
 							  </thead>
-							  <tbody>
-								<tr>
-								  <td>3</td>
-								  <td>OG Anunoby</td>
-								  <td>6 ft 8 in | 235 lbs</td>
-								  <td>Foward</td>
-								</tr>
-								<tr>
-								  <td>4</td>
-								  <td>Lorenzo Brown</td>
-								  <td>6 ft 5 in | 189 lbs</td>
-								  <td>Guard</td>
-								</tr>
-								<tr>
-								  <td>10</td>
-								  <td>DeMar DeRozan</td>
-								  <td>6 ft 7 in | 220 lbs</td>
-								  <td>Guard</td>
-								</tr>
+							  <tbody id="e1-14">
+								<!--api call-->
 							  </tbody>
 							</table>
 						</div>
@@ -252,7 +189,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			</div>
 			<div class="el-2"><h3>Western Conference</h3></br>
-			<div class="el-111" onclick="popupFunction()">
+			<div class="el-111" onclick="popupFunction('http://localhost:5000/api/hou/roster','e1-21')">
 			<!--popup container for team el-111-->
 				<a href="#myModal-21" role="button" data-toggle="modal"><img src="images/rockets.png"></a>
 					<div id="myModal-21" class="modal fade" role="dialog">
@@ -270,29 +207,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<tr>
 								  <th scope="col">No</th>
 								  <th scope="col">Name</th>
-								  <th scope="col">Height | Weight</th>
 								  <th scope="col">Position</th>
+								  <th scope="col">Height</th>
+								  <th scope="col">Weight</th>
 								</tr>
 							  </thead>
-							  <tbody>
-								<tr>
-								  <td>3</td>
-								  <td>OG Anunoby</td>
-								  <td>6 ft 8 in | 235 lbs</td>
-								  <td>Foward</td>
-								</tr>
-								<tr>
-								  <td>4</td>
-								  <td>Lorenzo Brown</td>
-								  <td>6 ft 5 in | 189 lbs</td>
-								  <td>Guard</td>
-								</tr>
-								<tr>
-								  <td>10</td>
-								  <td>DeMar DeRozan</td>
-								  <td>6 ft 7 in | 220 lbs</td>
-								  <td>Guard</td>
-								</tr>
+							  <tbody id="e1-21">
+								<!--api call-->
 							  </tbody>
 							</table>
 						</div>
@@ -300,7 +221,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 				</div>
 			</div>
-			<div class="el-112" onclick="popupFunction()">
+			<div class="el-112" onclick="popupFunction('http://localhost:5000/api/gsw/roster','e1-22')">
 			<!--popup container for team el-112-->
 				<a href="#myModal-22" role="button" data-toggle="modal"><img src="images/goldenstate.png"></a>
 					<div id="myModal-22" class="modal fade" role="dialog">
@@ -318,29 +239,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<tr>
 								  <th scope="col">No</th>
 								  <th scope="col">Name</th>
-								  <th scope="col">Height | Weight</th>
 								  <th scope="col">Position</th>
+								  <th scope="col">Height</th>
+								  <th scope="col">Weight</th>
 								</tr>
 							  </thead>
-							  <tbody>
-								<tr>
-								  <td>3</td>
-								  <td>OG Anunoby</td>
-								  <td>6 ft 8 in | 235 lbs</td>
-								  <td>Foward</td>
-								</tr>
-								<tr>
-								  <td>4</td>
-								  <td>Lorenzo Brown</td>
-								  <td>6 ft 5 in | 189 lbs</td>
-								  <td>Guard</td>
-								</tr>
-								<tr>
-								  <td>10</td>
-								  <td>DeMar DeRozan</td>
-								  <td>6 ft 7 in | 220 lbs</td>
-								  <td>Guard</td>
-								</tr>
+							  <tbody id="e1-22">
+								<!--api call-->
 							  </tbody>
 							</table>
 						</div>
@@ -348,7 +253,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 				</div>
 			</div>
-			<div class="el-113" onclick="popupFunction()">
+			<div class="el-113" onclick="popupFunction('http://localhost:5000/api/por/roster','e1-23')">
 			<!--popup container for team el-113-->
 				<a href="#myModal-23" role="button" data-toggle="modal"><img src="images/portland.png"></a>
 					<div id="myModal-23" class="modal fade" role="dialog">
@@ -366,29 +271,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<tr>
 								  <th scope="col">No</th>
 								  <th scope="col">Name</th>
-								  <th scope="col">Height | Weight</th>
 								  <th scope="col">Position</th>
+								  <th scope="col">Height</th>
+								  <th scope="col">Weight</th>
 								</tr>
 							  </thead>
-							  <tbody>
-								<tr>
-								  <td>3</td>
-								  <td>OG Anunoby</td>
-								  <td>6 ft 8 in | 235 lbs</td>
-								  <td>Foward</td>
-								</tr>
-								<tr>
-								  <td>4</td>
-								  <td>Lorenzo Brown</td>
-								  <td>6 ft 5 in | 189 lbs</td>
-								  <td>Guard</td>
-								</tr>
-								<tr>
-								  <td>10</td>
-								  <td>DeMar DeRozan</td>
-								  <td>6 ft 7 in | 220 lbs</td>
-								  <td>Guard</td>
-								</tr>
+							  <tbody id="e1-23">
+								<!--api call-->
 							  </tbody>
 							</table>
 						</div>
@@ -396,7 +285,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 				</div>
 			</div>
-			<div class="el-114" onclick="popupFunction()">
+			<div class="el-114" onclick="popupFunction('http://localhost:5000/api/tor/roster','e1-24')">
 			<!--popup container for team el-114-->
 				<a href="#myModal-24" role="button" data-toggle="modal"><img src="images/oklahoma.png"></a>
 					<div id="myModal-24" class="modal fade" role="dialog">
@@ -414,29 +303,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<tr>
 								  <th scope="col">No</th>
 								  <th scope="col">Name</th>
-								  <th scope="col">Height | Weight</th>
 								  <th scope="col">Position</th>
+								  <th scope="col">Height</th>
+								  <th scope="col">Weight</th>
 								</tr>
 							  </thead>
-							  <tbody>
-								<tr>
-								  <td>3</td>
-								  <td>OG Anunoby</td>
-								  <td>6 ft 8 in | 235 lbs</td>
-								  <td>Foward</td>
-								</tr>
-								<tr>
-								  <td>4</td>
-								  <td>Lorenzo Brown</td>
-								  <td>6 ft 5 in | 189 lbs</td>
-								  <td>Guard</td>
-								</tr>
-								<tr>
-								  <td>10</td>
-								  <td>DeMar DeRozan</td>
-								  <td>6 ft 7 in | 220 lbs</td>
-								  <td>Guard</td>
-								</tr>
+							  <tbody id="e1-24">
+								<!--api call-->
 							  </tbody>
 							</table>
 						</div>
@@ -447,15 +320,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<script>
 			// When the user clicks on <div>, open the popup
-			function popupFunction() {
-			var popup = document.getElementById("teamPopup");
-			popup.classList.toggle("show");
-								}
+			function popupFunction(url,bodyName) {
+			getData(url,bodyName);
+			}
 			</script>
-			
 						<!--banner-Slider-->
-						<script src="js/responsiveslides.min.js"></script>
-						 <script>
+						<script src="js/responsiveslides.min.js">
+						 </script>
+			<script>
 						// You can also use "$(window).load(function() {"
 						$(function () {
 						  // Slideshow 4
@@ -474,7 +346,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						  });
 
 						});
-						  </script>
+						
+function getData(url, bodyName)
+{
+				var xmlHttp = new XMLHttpRequest();
+				xmlHttp.open( "GET", url , false ); // false for synchronous request
+				xmlHttp.send( null );
+				setResponse(xmlHttp.responseText, bodyName);
+				return xmlHttp.responseText;
+}
+
+function setResponse(response, bodyName)
+{
+	var responseJSON = $.parseJSON(response);
+	var tr;
+    for (var i = 0; i < responseJSON.length; i++) {
+        tr = $('<tr/>');
+		tr.append("<td>" + responseJSON[i].num + "</td>");
+		tr.append("<td>" + responseJSON[i].name + "</td>");
+		tr.append("<td>" + responseJSON[i].pos + "</td>");
+        tr.append("<td>" + responseJSON[i].height + "</td>");
+        tr.append("<td>" + responseJSON[i].weight + "</td>");
+		var x = document.getElementById(bodyName);
+		$(x).append(tr);
+    }
+}
+</script>
+						  
 				</div>
   </div>
     <!--//end-banner-->
@@ -546,30 +444,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																</tr>
 																</thead>
 																<tbody>
-																<tr>
-																	<td>TEAM 1</td>
-																	<td>1</td>
-																	<td>3</td>
-																	<td>5</td>
-																</tr>
-																	<tr>
-																		<td>TEAM 2</td>
-																		<td>0</td>
-																		<td>1</td>
-																		<td>4</td>
-																	</tr>
-																	<tr>
-																		<td>TEAM 3</td>
-																		<td>7</td>
-																		<td>6</td>
-																		<td>4</td>
-																		</tr>
-																	<tr>
-																		<td>TEAM 4</td>
-																		<td>12</td>
-																		<td>7</td>
-																		<td>9</td>
-																	</tr>
+																<!--api call-->
 																</tbody>
 															</table>
 													  </div>
@@ -588,30 +463,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																</tr>
 																</thead>
 																<tbody>
-																<tr>
-																	<td>TEAM 1</td>
-																	<td>1</td>
-																	<td>3</td>
-																	<td>5</td>
-																</tr>
-																	<tr>
-																		<td>TEAM 2</td>
-																		<td>0</td>
-																		<td>1</td>
-																		<td>4</td>
-																	</tr>
-																	<tr>
-																		<td>TEAM 3</td>
-																		<td>7</td>
-																		<td>6</td>
-																		<td>4</td>
-																		</tr>
-																	<tr>
-																		<td>TEAM 4</td>
-																		<td>12</td>
-																		<td>7</td>
-																		<td>9</td>
-																	</tr>
+																<!--api call-->
 																</tbody>
 															</table>
 													  </div>
