@@ -8,6 +8,8 @@ router.get('/', function(req, res) {
     text = "API List\n\
 /api/roster\t\treturns the entire nba roster\n\
 /api/record\t\treturns the entire nba win-loss\n\
+/api/record/east\treturns the nba eastern conference win-loss\n\
+/api/record/west\treturns the nba western conference win-loss\n\
 /api/tweetscore\t\treturns the entire nba average twitter sentiment score by team\n\
 /api/tweetscore/day\treturns the entire nba average twitter sentiment score by team and day\n\
 /api/tweetscore/hour\treturns the entire nba average twitter sentiment score by team and hour\n\
@@ -17,15 +19,34 @@ router.get('/', function(req, res) {
 /api/:team/tweetscore/day\treturns a team's average twitter sentiment score by day\n\
 /api/:team/tweetscore/hour\treturns a team's average twitter sentiment score by hour\n\n\
 replace :team with the 3 letter code\n\
+ATL Atlanta Hawks\n\
+BKN Brooklyn Nets\n\
 BOS Boston Celtics\n\
+CHA Chicago Bulls\n\
 CLE Cleveland Cavaliers\n\
+DAL Dallas Mavericks\n\
+DEN Denver Nuggets\n\
+DET Detroit Pistons\n\
 GSW Golden State Warriors\n\
 HOU Houston Rockets\n\
 IND Indiana Pacers\n\
+LAC Los Angeles Clippers\n\
+LAL Los Angeles Lakers\n\
+MEM Memphis Grizzlies\n\
+MIA Miami Heats\n\
+MIL Milwaukee Bucks\n\
 MIN Minnesota Timberwolves\n\
 NOP New Orleans Pelicans\n\
+NYK New York Knicks\n\
+OKC Oklahoma City Thunder\n\
+ORL Orlando Magic\n\
+PHI Philadelphia Sixers\n\
+PHX Phoenix Suns\n\
 POR Portland Trail Blazers\n\
+SAC Sacramento Kings\n\
+SAS San Antonio Spurs\n\
 TOR Toronto Raptors\n\
+UTA Utah Jazz\n\
 WAS Washington Wizards\n\
 ";
 
@@ -37,8 +58,18 @@ router.get('/roster', function(req, res) {
     var params = [];
     stats_query(sql, params, res);
 });
+router.get('/record/west', function(req, res) {
+    var sql = "SELECT * FROM teams WHERE conf = 'West' ORDER BY pct DESC";
+    var params = [];
+    stats_query(sql, params, res);
+});
+router.get('/record/east', function(req, res) {
+    var sql = "SELECT * FROM teams WHERE conf = 'East' ORDER By pct DESC";
+    var params = [];
+    stats_query(sql, params, res);
+});
 router.get('/record', function(req, res) {
-    var sql = "SELECT * FROM teams";
+    var sql = "SELECT * FROM teams ORDER BY pct DESC";
     var params = [];
     stats_query(sql, params, res);
 });
