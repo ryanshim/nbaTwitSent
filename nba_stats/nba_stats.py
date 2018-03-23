@@ -5,8 +5,10 @@ from nba_py import team
 from nba_py.constants import TEAMS
 
 season = '2017-18'
-team_ids = ['TOR', 'BOS', 'CLE', 'IND', 'WAS',
-        'HOU', 'GSW', 'NOP', 'POR', 'MIN']
+team_ids = []
+
+for k,v in TEAMS.items():
+    team_ids.append(k)
 
 def populate_teams():
     conn = sqlite3.connect('../data/data_team.db')
@@ -16,13 +18,16 @@ def populate_teams():
         tid = TEAMS[team_id]['id']
         team_stats = dict(team.TeamSummary(tid, season).json)
 
+        print(team_stats['resultSets'][0]['rowSet'][0][5])
+
         team_name = team_id 
+        team_conf = team_stats['resultSets'][0]['rowSet'][0][5]
         team_wins = team_stats['resultSets'][0]['rowSet'][0][8]
         team_loss = team_stats['resultSets'][0]['rowSet'][0][9]
         team_pct = team_stats['resultSets'][0]['rowSet'][0][10]
 
-        row = (team_name, team_wins, team_loss, team_pct)
-        c.execute('INSERT INTO teams VALUES (?,?,?,?)', row)
+        row = (team_name, team_conf, team_wins, team_loss, team_pct)
+        c.execute('INSERT INTO teams VALUES (?,?,?,?,?)', row)
         conn.commit()
 
     conn.close()
@@ -50,5 +55,5 @@ def populate_players():
 
 if __name__ == '__main__':
     populate_teams()
-    populate_players()
+    #populate_players()
 
