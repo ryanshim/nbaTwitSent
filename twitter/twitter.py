@@ -13,20 +13,42 @@ from logger import *
 
 db_path = '/data/data.db'
 tracking = {
-    # Western
+    # Western Conference
     "@houstonrockets": "HOU", "#rockets": "HOU",
     "@warriors": "GSW", "#dubnation": "GSW",
     "@trailblazers": "POR", "#ripcity": "POR",
     "@pelicansnba": "NOP", "#doitbig": "NOP",
     "@timberwolves": "MIN", "#alleyesnorth": "MIN",
+    "@nuggest": "DEN", "#milehighbasketball": "DEN",
+    "@okcthunder": "OKC", "#thunderup": "OKC",
+    "@dallasmavs": "DAL", "#mffl": "DAL",
+    "@lakers": "LAL", "#lakeshow": "LAL",
+    "@laclippers": "LAC", "#ittakeseverything": "LAC",
+    "@suns": "PHX", "#sunsat50": "PHX",
+    "@spurs": "SAS", "#gospursgo": "SAS",
+    "@utahjazz": "UTA", "#takenote": "UTA",
+    "@memgrizz": "MEM", "#grindcity": "MEM",
+    "@sacramentokings": "SAC", "#sacramentoproud": "SAC",
 
-    # Eastern
+    # Eastern Conference
     "@raptors": "TOR", "#wethenorth": "TOR",
     "@celtics": "BOS", "#celtics": "BOS",
     "@cavs": "CLE", "#allforone": "CLE",
-    "@pacers": "IND", "#gopacers": "IND",
-    "@washwizards": "WAS", "dcfamily": "WAS"
+    "@pacers": "IND", "#pacers": "IND",
+    "@washwizards": "WAS", "#dcfamily": "WAS",
+    "@atlhawks": "ATL", "#truetoatlanta": "ATL",
+    "@brooklynets": "BKN", "#wegohard": "BKN",
+    "@hornets": "CHA", "#buzzcity": "CHA",
+    "@chicagobulls": "CHI", "#bullsnation": "CHI",
+    "@nyknicks": "NYK", "#newyorkforever": "NYK",
+    "@orlandomagic": "ORL", "#puremagic": "ORL",
+    "@detroitpistons": "DET", "#detroitbasketall": "DET",
+    "@sixers": "PHI", "#heretheycome": "PHI",
+    "@bucks": "MIL", "#fearthedeer": "MIL",
+    "@miamiheat": "MIA", "#heatculture": "MIA"
 }
+east = ["TOR", "BOS", "CLE", "IND", "WAS", "ATL", "BKN", "CHA",\
+        "CHI", "NYK", "ORL", "DET", "PHI", "MIL", "MIA"]
 
 class Listener(StreamListener):
     def __init__(self, db):
@@ -46,18 +68,20 @@ class Listener(StreamListener):
             if all_data["truncated"]:
                 tweet = all_data["extended_tweet"]["full_text"]
 
-
             score = 0
             blob = TextBlob(tweet)
             for sentence in blob.sentences:
                 score += sentence.sentiment.polarity
 
-            t = (date, "", "", user, tweet, score)
+            t = (date, "", "", user, tweet, score, -1)
             for k, v in tracking.items():
                 if k in tweet.lower():
-                    t = (date, v, k, user, tweet, score)
+                    if v in east:
+                        t = (date, v, k, user, tweet, score, 1)
+                    else:
+                        t = (date, v, k, user, tweet, score, 0)
 
-            self.db.insert("INSERT INTO tweets VALUES (?,?,?,?,?,?)", t)
+            self.db.insert("INSERT INTO tweets VALUES (?,?,?,?,?,?,?)", t)
             #logger.info("Stored tweet")
         #logger.debug(all_data)
 

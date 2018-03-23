@@ -10,7 +10,8 @@ c.execute('''CREATE TABLE tweets
             tag text not null,
             user text not null,
             tweet text not null,
-            score real)''')
+            score real,
+            east integer)''')
 
 conn.commit()
 conn.close()

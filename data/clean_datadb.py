@@ -18,5 +18,13 @@ c.execute("DELETE FROM tweets WHERE team = ''")
 c.execute("UPDATE tweets SET date = replace(date, 'Mar', '03') WHERE date LIKE '%Mar%'")
 c.execute("UPDATE tweets SET date = substr(date,26,4)||'-'||substr(date,5,2)||'-'||substr(date,8,2)||'T'||substr(date,11,8)")
 
+c.execute("ALTER TABLE tweets ADD COLUMN east INTEGER DEFAULT 0")
+c.execute("UPDATE tweets SET east = 1 WHERE team = 'TOR'")
+c.execute("UPDATE tweets SET east = 1 WHERE team = 'BOS'")
+c.execute("UPDATE tweets SET east = 1 WHERE team = 'CLE'")
+c.execute("UPDATE tweets SET east = 1 WHERE team = 'IND'")
+c.execute("UPDATE tweets SET east = 1 WHERE team = 'WAS'")
+
+
 conn.commit()
 conn.close()
