@@ -11,14 +11,16 @@ for k,v in TEAMS.items():
     team_ids.append(k)
 
 def populate_teams():
+    print('Retrieving team stats')
     conn = sqlite3.connect('../data/data_team.db')
     c = conn.cursor()
+
+    c.execute('DELETE FROM teams') # remove old entries
+    conn.commit()
 
     for team_id in team_ids:
         tid = TEAMS[team_id]['id']
         team_stats = dict(team.TeamSummary(tid, season).json)
-
-        print(team_stats['resultSets'][0]['rowSet'][0][5])
 
         team_name = team_id 
         team_conf = team_stats['resultSets'][0]['rowSet'][0][5]
@@ -31,10 +33,15 @@ def populate_teams():
         conn.commit()
 
     conn.close()
+    print('Done')
 
 def populate_players():
+    print('Retrieving players stats')
     conn = sqlite3.connect('../data/data_team.db')
     c = conn.cursor()
+
+    c.execute('DELETE FROM players')
+    conn.commit()
 
     for team_id in team_ids:
         tid = TEAMS[team_id]['id']
@@ -52,8 +59,9 @@ def populate_players():
             conn.commit()
 
     conn.close()
+    print('Done')
 
 if __name__ == '__main__':
     populate_teams()
-    #populate_players()
+    populate_players()
 
