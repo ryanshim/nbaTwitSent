@@ -8,8 +8,6 @@ html, body{
 	font-family: 'Roboto-Regular';
 	font-size: 100%;
 	background-color:grey;
-	/*background: url(../images/m.png)repeat 0px 0px;*/
-
 }
 body a {
 	transition:0.5s all;
@@ -256,6 +254,7 @@ label{
 			padding: 10px;
 		}
 	}
+
 /*--slider-css--*/
 .banner{
 	    background: url(../images/bgw.jpg)no-repeat 0px 0px;
@@ -268,6 +267,7 @@ label{
     -ms-background-size:cover;
       min-height: 400px;
 }
+/*divs for teams*/
 .el-1, .el-2 {
   float: left;
   margin-left:0.75%;
@@ -286,8 +286,27 @@ label{
   height: 100%;
   text-align: center;
   min-height: 169px;
-  /*outline-style:dotted;*/
 }
+/*--div for teams ends here--*/
+
+/*--divs for teams standings--*/
+.est-conf, .wst-conf{
+	float: left;
+	margin-top: 0.5%;
+	margin-left: 2%;
+	text-align: center;
+	pointer-events: none;
+  cursor: default;
+  text-decoration:none;
+  color:black;
+	
+}
+.est-conf h3, .wst-conf h3{
+	background-color: #d9d9d9;
+	border: 2px;
+    padding: 10px;
+}
+
 .mag-innert-left {
     background-color: #fff;
     padding: 1em 1em;
@@ -1370,7 +1389,7 @@ h4.side {
 	font-size:10px;
 }
 .accordation_menu input:checked ~ div.content{
-	height:300px;
+	height:350px;
 	background:#f9f9f9;
 }
 /*** For Change Animation Effects ****/
@@ -1407,7 +1426,7 @@ h4.side {
 }
 .list_vertical {
     margin: 1.4em 0;
-    padding: 2em 2em 2em 2em;
+    padding: 1.5em 1.5em 1.5em 1.5em;
     background: #eee;
 }
 .accordation_menu input {
@@ -1522,7 +1541,7 @@ a.pp-title:hover {
 }
 .scrollbar{
 	float: left;
-	height:300px;
+	height:350px;
 	width:100%;
 	overflow-y: scroll;
 }
