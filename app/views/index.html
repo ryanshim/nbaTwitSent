@@ -1,849 +1,859 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-<title>NBA League Winner Prediction using Sentimental Analysis</title>
-<link rel="shortcut icon" type="image/x-icon" href="../static/images/favicon.ico" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Basketball Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<link href="css/bootstrap-3.1.1.min.css" rel="stylesheet" type="text/css">
-<!-- Custom Theme files -->
-<link href="css/owl.carousel.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/style.css" rel='stylesheet' type='text/css' />	
-<script src="js/jquery.min.js"> </script>
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
-<!--/script-->
-<script type="text/javascript">
-			jQuery(document).ready(function($) {
-				$(".scroll").click(function(event){		
-					event.preventDefault();
-					$('html,body').animate({scrollTop:$(this.hash).offset().top},900);
-				});
-			});
-</script>
-
-</head>
-<body> 
- <div class="container">
-  <div class="header" id="home">
-	 <div class="subhead white">
-		<nav class="navbar navbar-default" role="navigation">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="index.html"><h1><img src="images/nba-logo.png">NBA<span>League</span></h1> </a>
-			</div>
-			<!--/.navbar-header-->
-			<div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					 <li><a href="index.html"><h4>Home</h4></a></li>
- 					 <li><a href="teams.html"><h4>Teams</h4></a></li>
-  					 <li><a href="standings.html"><h4>Standings</h4></a></li>
- 					 <li><a href="stats.html"><h4>Stats</h4></a></li>
-
-				</ul>
-			</div>
-			<!--/.navbar-collapse-->
-	 <!--/.navbar-->
-	</nav>
-  </div>
- </div>
-   <!--/start-banner-->
-  <div class="banner">
-	    <div class="banner-inner">
-			<div class="el-1"><h3>Eastern Conference</h3></br>
-				<div class="el-111" onclick="popupFunction('http://localhost:5000/api/tor/roster','e1-11')">
-				<!--popup container for team el-111-->
-				<a href="#myModal-11" role="button" data-toggle="modal"><img src="images/raptors.png"></a>
-					<div id="myModal-11" class="modal fade" role="dialog">
-						<div class="modal-dialog">
-						<!-- Modal content-->
-							<div class="modal-content">
-								<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal">&times;</button>
-								<h4 class="modal-title">TORONTO RAPTORS</h4>
-							</div>
-						<div class="modal-body">
-							<table id="firstTable" class="table">
-							  <thead class="thead-inverse">
-							   <thead>
-								<tr>
-								  <th scope="col">No</th>
-								  <th scope="col">Name</th>
-								  <th scope="col">Position</th>
-								  <th scope="col">Height</th>
-								  <th scope="col">Weight</th>
-								</tr>
-							  </thead>
-							  <tbody id="e1-11">
-								<!--api call-->
-							  </tbody>
-							</table>
-						</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="el-112" onclick="popupFunction('http://localhost:5000/api/bos/roster','e1-12')">
-			<!--popup container for team el-112-->
-				<a href="#myModal-12" role="button" data-toggle="modal"><img src="images/celtics.png"></a>
-					<div id="myModal-12" class="modal fade" role="dialog">
-						<div class="modal-dialog">
-						<!-- Modal content-->
-							<div class="modal-content">
-								<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal">&times;</button>
-								<h4 class="modal-title">BOSTON CELTICS</h4>
-							</div>
-						<div class="modal-body">
-							<table class="table">
-							  <thead class="thead-inverse">
-							   <thead>
-								<tr>
-								  <th scope="col">No</th>
-								  <th scope="col">Name</th>
-								  <th scope="col">Position</th>
-								  <th scope="col">Height</th>
-								  <th scope="col">Weight</th>
-								</tr>
-							  </thead>
-							  <tbody id="e1-12">
-								<!--api call-->
-							  </tbody>
-							</table>
-						</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="el-113" onclick="popupFunction('http://localhost:5000/api/ind/roster','e1-13')">
-			<!--popup container for team el-113-->
-				<a href="#myModal-13" role="button" data-toggle="modal"><img src="images/indiana.png"></a>
-					<div id="myModal-13" class="modal fade" role="dialog">
-						<div class="modal-dialog">
-						<!-- Modal content-->
-							<div class="modal-content">
-								<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal">&times;</button>
-								<h4 class="modal-title">INDIANA PACERS</h4>
-							</div>
-						<div class="modal-body">
-							<table class="table">
-							  <thead class="thead-inverse">
-							   <thead>
-								<tr>
-								  <th scope="col">No</th>
-								  <th scope="col">Name</th>
-								  <th scope="col">Position</th>
-								  <th scope="col">Height</th>
-								  <th scope="col">Weight</th>
-								</tr>
-							  </thead>
-							  <tbody id="e1-13">
-								<!--api call-->
-							  </tbody>
-							</table>
-						</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="el-114" onclick="popupFunction('http://localhost:5000/api/cle/roster','e1-14')">
-			<!--popup container for team el-114-->
-				<a href="#myModal-14" role="button" data-toggle="modal"><img src="images/cavaliers.png"></a>
-					<div id="myModal-14" class="modal fade" role="dialog">
-						<div class="modal-dialog">
-						<!-- Modal content-->
-							<div class="modal-content">
-								<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal">&times;</button>
-								<h4 class="modal-title14">CLEVELAND CAVALIERS</h4>
-							</div>
-						<div class="modal-body">
-							<table class="table">
-							  <thead class="thead-inverse">
-							   <thead>
-								<tr>
-								  <th scope="col">No</th>
-								  <th scope="col">Name</th>
-								  <th scope="col">Position</th>
-								  <th scope="col">Height</th>
-								  <th scope="col">Weight</th>
-								</tr>
-							  </thead>
-							  <tbody id="e1-14">
-								<!--api call-->
-							  </tbody>
-							</table>
-						</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			</div>
-			<div class="el-2"><h3>Western Conference</h3></br>
-			<div class="el-111" onclick="popupFunction('http://localhost:5000/api/hou/roster','e1-21')">
-			<!--popup container for team el-111-->
-				<a href="#myModal-21" role="button" data-toggle="modal"><img src="images/rockets.png"></a>
-					<div id="myModal-21" class="modal fade" role="dialog">
-						<div class="modal-dialog">
-						<!-- Modal content-->
-							<div class="modal-content">
-								<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal">&times;</button>
-								<h4 class="modal-title">HOUSTON ROCKETS</h4>
-							</div>
-						<div class="modal-body">
-							<table class="table">
-							  <thead class="thead-inverse">
-							   <thead>
-								<tr>
-								  <th scope="col">No</th>
-								  <th scope="col">Name</th>
-								  <th scope="col">Position</th>
-								  <th scope="col">Height</th>
-								  <th scope="col">Weight</th>
-								</tr>
-							  </thead>
-							  <tbody id="e1-21">
-								<!--api call-->
-							  </tbody>
-							</table>
-						</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="el-112" onclick="popupFunction('http://localhost:5000/api/gsw/roster','e1-22')">
-			<!--popup container for team el-112-->
-				<a href="#myModal-22" role="button" data-toggle="modal"><img src="images/goldenstate.png"></a>
-					<div id="myModal-22" class="modal fade" role="dialog">
-						<div class="modal-dialog">
-						<!-- Modal content-->
-							<div class="modal-content">
-								<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal">&times;</button>
-								<h4 class="modal-title">GOLDEN STATE WARRIORS</h4>
-							</div>
-						<div class="modal-body">
-							<table class="table">
-							  <thead class="thead-inverse">
-							   <thead>
-								<tr>
-								  <th scope="col">No</th>
-								  <th scope="col">Name</th>
-								  <th scope="col">Position</th>
-								  <th scope="col">Height</th>
-								  <th scope="col">Weight</th>
-								</tr>
-							  </thead>
-							  <tbody id="e1-22">
-								<!--api call-->
-							  </tbody>
-							</table>
-						</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="el-113" onclick="popupFunction('http://localhost:5000/api/por/roster','e1-23')">
-			<!--popup container for team el-113-->
-				<a href="#myModal-23" role="button" data-toggle="modal"><img src="images/portland.png"></a>
-					<div id="myModal-23" class="modal fade" role="dialog">
-						<div class="modal-dialog">
-						<!-- Modal content-->
-							<div class="modal-content">
-								<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal">&times;</button>
-								<h4 class="modal-title">PORTLAND TRAIL BLAZERS</h4>
-							</div>
-						<div class="modal-body">
-							<table class="table">
-							  <thead class="thead-inverse">
-							   <thead>
-								<tr>
-								  <th scope="col">No</th>
-								  <th scope="col">Name</th>
-								  <th scope="col">Position</th>
-								  <th scope="col">Height</th>
-								  <th scope="col">Weight</th>
-								</tr>
-							  </thead>
-							  <tbody id="e1-23">
-								<!--api call-->
-							  </tbody>
-							</table>
-						</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="el-114" onclick="popupFunction('http://localhost:5000/api/tor/roster','e1-24')">
-			<!--popup container for team el-114-->
-				<a href="#myModal-24" role="button" data-toggle="modal"><img src="images/oklahoma.png"></a>
-					<div id="myModal-24" class="modal fade" role="dialog">
-						<div class="modal-dialog">
-						<!-- Modal content-->
-							<div class="modal-content">
-								<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal">&times;</button>
-								<h4 class="modal-title">OKLAHOMA CITY THUNDER</h4>
-							</div>
-						<div class="modal-body">
-							<table class="table">
-							  <thead class="thead-inverse">
-							   <thead>
-								<tr>
-								  <th scope="col">No</th>
-								  <th scope="col">Name</th>
-								  <th scope="col">Position</th>
-								  <th scope="col">Height</th>
-								  <th scope="col">Weight</th>
-								</tr>
-							  </thead>
-							  <tbody id="e1-24">
-								<!--api call-->
-							  </tbody>
-							</table>
-						</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			</div>
-			<script>
-			// When the user clicks on <div>, open the popup
-			function popupFunction(url,bodyName) {
-			getData(url,bodyName);
-			}
-			</script>
-						<!--banner-Slider-->
-						<script src="js/responsiveslides.min.js">
-						 </script>
-			<script>
-						// You can also use "$(window).load(function() {"
-						$(function () {
-						  // Slideshow 4
-						  $("#slider4").responsiveSlides({
-						auto: true,
-						pager: true,
-						nav:false,
-						speed: 500,
-						namespace: "callbacks",
-						before: function () {
-						  $('.events').append("<li>before event fired.</li>");
-						},
-						after: function () {
-						  $('.events').append("<li>after event fired.</li>");
-						}
-						  });
-
-						});
-						
-function getData(url, bodyName)
-{
-				var xmlHttp = new XMLHttpRequest();
-				xmlHttp.open( "GET", url , false ); // false for synchronous request
-				xmlHttp.send( null );
-				setResponse(xmlHttp.responseText, bodyName);
-				return xmlHttp.responseText;
-}
-
-function setResponse(response, bodyName)
-{
-	var responseJSON = $.parseJSON(response);
-	var tr;
-    for (var i = 0; i < responseJSON.length; i++) {
-        tr = $('<tr/>');
-		tr.append("<td>" + responseJSON[i].num + "</td>");
-		tr.append("<td>" + responseJSON[i].name + "</td>");
-		tr.append("<td>" + responseJSON[i].pos + "</td>");
-        tr.append("<td>" + responseJSON[i].height + "</td>");
-        tr.append("<td>" + responseJSON[i].weight + "</td>");
-		var x = document.getElementById(bodyName);
-		$(x).append(tr);
-    }
-}
-</script>
-						  
-				</div>
-  </div>
-    <!--//end-banner-->
-     <!--/start-main-->
-          <div class="main-content">
-		      <!--/soccer-inner-->
-	                 <div class="soccer-inner">
-					  <!--/soccer-left-part-->
-					  <div class="col-md-8 soccer-left-part">
-					    <!--/about-->
-					      <div class="about">
-						             <h3 class="tittle">About</h3>
-						      <div class="sap_tabs">	
-								<div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
-									  <ul class="resp-tabs-list">
-										  <li class="resp-tab-item grid1" aria-controls="tab_item-0" role="tab"><span>NEXT MATCH</span></li>
-										  <li class="resp-tab-item grid2" aria-controls="tab_item-1" role="tab"><span>LEAGUE TABLE-EASTERN CONFERENCE</span></li>
-										  <li class="resp-tab-item grid3" aria-controls="tab_item-1" role="tab"><span>LEAGUE TABLE-WESTERN CONFERENCE</span></li>
-									  </ul>				  	 
-										<div class="resp-tabs-container">
-											<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
-												<div class="facts">
-												     <div class="tab_list">
-														 <table>
-																<tbody>
-																<tr>
-																	<td class="one">01 June 10:00</td>
-																	<td class="one">Juventus</td>
-																	<td class="one">VS</td>
-																	<td class="one">Sampdoria</td>
-																	
-																</tr>
-																	<tr>
-																		<td class="one">01 June 19:00</td>
-																		<td class="one">Pro Soccer</td>
-																		<td class="one">VS</td>
-																		<td class="one">Genoa</td>
-																		
-																	</tr>
-																	<tr>
-																		<td class="one">01 June 12:00</td>
-																		<td class="one">Atlanta</td>
-																		<td class="one">VS</td>
-																		<td class="one">Napoli</td>
-																		</tr>
-																	<tr>
-																		<td class="one">01 June 30:00</td>
-																		<td class="one">Atlanta</td>
-																		<td class="one">VS</td>
-																		<td class="one">Fiorentina</td>
-																		
-																	</tr>
-																</tbody>
-															</table>
-													  </div>
-													</div>
-													
-												  </div>
-											<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1">
-												<div class="facts">
-												    <div class="tab_list">
-														 <table>
-																<thead>
-																<tr>
-																	<th>Team</th>
-																	<th>W</th>
-																	<th>L</th>
-																	<th>Pct</th>
-																</tr>
-																</thead>
-																<tbody>
-																<!--api call-->
-																</tbody>
-															</table>
-													  </div>
-											         </div>
-												</div>
-											<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-2">
-												<div class="facts">
-												    <div class="tab_list">
-														 <table>
-																<thead>
-																<tr>
-																	<th>Team</th>
-																	<th>W</th>
-																	<th>L</th>
-																	<th>Pct</th>
-																</tr>
-																</thead>
-																<tbody>
-																<!--api call-->
-																</tbody>
-															</table>
-													  </div>
-												</div>
-											</div>
-										 <script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
-											<script type="text/javascript">
-												$(document).ready(function () {
-													$('#horizontalTab').easyResponsiveTabs({
-														type: 'default', //Types: default, vertical, accordion           
-														width: 'auto', //auto or any width like 600px
-														fit: true   // 100% fit in a container
-													});
-												});
-											   </script>
-						                    </div>
-					                   </div>
-								 </div>
-							</div>
-							   <!--//about-->
-							      <!--/players-->
-							
-					<!--banner Slider starts Here-->
-					<script src="js/responsiveslides.min.js"></script>
-						 <script>
-							// You can also use "$(window).load(function() {"
-							$(function () {
-							  // Slideshow 3
-							  $("#slider3").responsiveSlides({
-								auto: true,
-								pager:false,
-								nav: true,
-								speed: 500,
-								namespace: "callbacks",
-								before: function () {
-								  $('.events').append("<li>before event fired.</li>");
-								},
-								after: function () {
-								  $('.events').append("<li>after event fired.</li>");
-								}
-							  });
-						
-							});
-						  </script>
-					 </div>
-					<!--//soccer-left-part-->
-							<!--/soccer-right-part-->
-							<div class="col-md-4 soccer-right-part">
-							  
-				<!-- requried-jsfiles-for owl -->
-										<script src="js/owl.carousel.js"></script>
-										  <script>
-										  $(document).ready(function() {
-											   $("#owl-demo").owlCarousel({
-												items :1,
-												lazyLoad : true,
-												autoPlay : false,
-												navigation : true,
-												navigationText :  true,
-												pagination : false,
-												responsiveBreakpoints: { 
-										portrait: { 
-											changePoint:480,
-											visibleItems: 2
-										}, 
-										landscape: { 
-											changePoint:640,
-											visibleItems: 2
-										},
-										tablet: { 
-											changePoint:768,
-											visibleItems: 3
-										}
-									}
-												});
-										  });
-										</script>
-						<!-- //requried-jsfiles-for owl -->
-				 <!--//accordation_menu-->
-                    <div class="list_vertical">
-		         	 	<section class="accordation_menu">
-						  <div>
-						    <input id="label-1" name="lida" type="radio" checked="">
-						   <label for="label-1" id="item1"><i class="ferme"> </i>Popular Tweets<i class="icon-plus-sign i-right1"></i><i class="icon-minus-sign i-right2"></i></label>
-						    <div class="content" id="a1">
-						    	<div class="scrollbar" id="style-2">
-								 <div class="force-overflow">
-									<div class="popular-post-grids">
-										<div class="popular-post-grid">
-											<div class="post-img">
-												<a href="single.html"><img src="images/f1.jpg" alt=""></a>
-											</div>
-											<div class="post-text">
-												<a class="pp-title" href="single.html"> Popular Tweet 1</a>
-												<p>On Feb 25 <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>3 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a></p>
-											</div>
-											<div class="clearfix"></div>
-										</div>
-										<div class="popular-post-grid">
-											<div class="post-img">
-												<a href="single.html"><img src="images/f2.jpg" alt=""></a>
-											</div>
-											<div class="post-text">
-												<a class="pp-title" href="single.html"> Popular Tweet 2</a>
-												<p>On Jan 14 <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>2 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a></p>
-											</div>
-											<div class="clearfix"></div>
-										</div>
-										<div class="popular-post-grid">
-											<div class="post-img">
-												<a href="single.html"><img src="images/f3.jpg" alt=""></a>
-											</div>
-											<div class="post-text">
-												<a class="pp-title" href="single.html"> Popular Tweet 3</a>
-												<p>On Jan 25 <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>0 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a></p>
-											</div>
-											<div class="clearfix"></div>
-										</div>
-										<div class="popular-post-grid">
-											<div class="post-img">
-												<a href="single.html"><img src="images/f4.jpg" alt=""></a>
-											</div>
-											<div class="post-text">
-												<a class="pp-title" href="single.html"> Popular Tweet 5</a>
-												<p>On Jan 25 <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>1 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a></p>
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-									</div>
-                                </div>
-                              </div>
-						  </div>
-						  <div>
-						    <input id="label-2" name="lida" type="radio">
-						    <label for="label-2" id="item2"><i class="icon-leaf" id="i2"></i>Recent Tweets<i class="icon-plus-sign i-right1"></i><i class="icon-minus-sign i-right2"></i></label>
-						    <div class="content" id="a2">
-						       <div class="scrollbar" id="style-2">
-								   <a class="twitter-timeline" href="https://twitter.com/NBA?ref_src=twsrc%5Etfw">Tweets by NBA</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-								</div>
-						    </div>
-						  </div>
-						  <div>
-						    <input id="label-3" name="lida" type="radio">
-						    <label for="label-3" id="item3"><i class="icon-trophy" id="i3"></i>Comments<i class="icon-plus-sign i-right1"></i><i class="icon-minus-sign i-right2"></i></label>
-						    <div class="content" id="a3">
-						       <div class="scrollbar" id="style-2">
-							    <div class="force-overflow">
-								 <div class="response">
-						<div class="media response-info">
-							<div class="media-left response-text-left">
-								<a href="#">
-									<img class="media-object" src="images/icon1.png" alt="">
-								</a>
-								<h5><a href="#">User</a></h5>
-							</div>
-							<div class="media-body response-text-right">
-								<p>User 1 comments here</p>
-								<ul>
-									<li>MARCH 01, 2018</li>
-									<li><a href="single.html">Reply</a></li>
-								</ul>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="media response-info">
-							<div class="media-left response-text-left">
-								<a href="#">
-									<img class="media-object" src="images/icon1.png" alt="">
-								</a>
-								<h5><a href="#">User</a></h5>
-							</div>
-							<div class="media-body response-text-right">
-								<p>User 2 comments here</p>
-								<ul>
-									<li>JAN 26, 2018</li>
-									<li><a href="single.html">Reply</a></li>
-								</ul>		
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="media response-info">
-							<div class="media-left response-text-left">
-								<a href="#">
-									<img class="media-object" src="images/icon1.png" alt="">
-								</a>
-								<h5><a href="#">User</a></h5>
-							</div>
-							<div class="media-body response-text-right">
-								<p>User 3 comments here</p>
-								<ul>
-									<li>JAN 10, 2018</li>
-									<li><a href="single.html">Reply</a></li>
-								</ul>		
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="media response-info">
-							<div class="media-left response-text-left">
-								<a href="#">
-									<img class="media-object" src="images/icon1.png" alt="">
-								</a>
-								<h5><a href="#">User</a></h5>
-							</div>
-							<div class="media-body response-text-right">
-								<p>User 4 comments here</p>
-								<ul>
-									<li>FEB 13, 2018</li>
-									<li><a href="single.html">Reply</a></li>
-								</ul>		
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="media response-info">
-							<div class="media-left response-text-left">
-								<a href="#">
-									<img class="media-object" src="images/icon1.png" alt="">
-								</a>
-								<h5><a href="#">User</a></h5>
-							</div>
-							<div class="media-body response-text-right">
-								<p>User 5 comments here</p>
-								<ul>
-									<li>JAN 28, 2018</li>
-									<li><a href="single.html">Reply</a></li>
-								</ul>		
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="media response-info">
-							<div class="media-left response-text-left">
-								<a href="#">
-									<img class="media-object" src="images/icon1.png" alt="">
-								</a>
-								<h5><a href="#">User</a></h5>
-							</div>
-							<div class="media-body response-text-right">
-								<p>User 6 comments here</p>
-								<ul>
-									<li>FEB 12, 2018</li>
-									<li><a href="single.html">Reply</a></li>
-								</ul>		
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="media response-info">
-							<div class="media-left response-text-left">
-								<a href="#">
-									<img class="media-object" src="images/icon1.png" alt="">
-								</a>
-								<h5><a href="#">User</a></h5>
-							</div>
-							<div class="media-body response-text-right">
-								<p>User 7 comments here</p>
-								<ul>
-									<li>JAN 25, 2018</li>
-									<li><a href="single.html">Reply</a></li>
-								</ul>		
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-					</div>
-					</div>
+  <head>
+    <title>PredictNBA</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Basketball Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+      Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="css/bootstrap-3.1.1.min.css" rel="stylesheet" type="text/css">
+    <!-- Custom Theme files -->
+    <link href="css/owl.carousel.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <script src="js/responsiveslides.min.js"></script>
+    <script src="js/jquery.min.js"> </script>
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <!--/script-->
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+      	$(".scroll").click(function(event){		
+      		event.preventDefault();
+      		$('html,body').animate({scrollTop:$(this.hash).offset().top},900);
+      	});
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header" id="home">
+        <div class="subhead white">
+          <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="index.html">
+                <h1><img src="images/nba-logo.png">NBA<span>Predictor</span></h1>
+              </a>
+            </div>
+            <!--/.navbar-header-->
+            <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li>
+                  <a href="index.html">
+                    <h4>Home</h4>
+                  </a>
+                </li>
+				<li>
+                  <a href="#about">
+                    <h4>About</h4>
+                  </a>
+                </li>
+                <li>
+                  <a href="teams.html">
+                    <h4>Teams</h4>
+                  </a>
+                </li>
+                <li>
+                  <a href="standings.html">
+                    <h4>Standings</h4>
+                  </a>
+                </li>
+                <li>
+                  <a href="stats.html">
+                    <h4>Stats</h4>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!--/.navbar-collapse-->
+            <!--/.navbar-->
+          </nav>
+        </div>
+      </div>
+      <!--/start-banner-->
+      <div class="banner">
+        <div class="banner-inner">
+          <div class="el-1">
+            <h3>Eastern Conference</h3>
+            </br>
+			<div id="e1-11jauye" class="el-111" onclick="popupFunction('http://localhost:5000/api/tor/roster','e1-11')">
+              <!--popup container for team el-111-->
+              <a href="#myModal-11" role="button" data-toggle="modal"><img src="images/raptors.png"></a>
+              <div id="myModal-11" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">TORONTO RAPTORS</h4>
+                    </div>
+                    <div class="modal-body">
+                      <table class="table">
+                        <thead class="thead-inverse">
+                        <thead>
+                          <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Position</th>
+                            <th scope="col">Height</th>
+                            <th scope="col">Weight</th>
+                          </tr>
+                        </thead>
+                        <tbody id="e1-11">
+                          <!--api call-->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="el-112" onclick="popupFunction('http://localhost:5000/api/bos/roster','e1-12')">
+              <!--popup container for team el-112-->
+              <a href="#m2yModal-12" role="button" data-toggle="modal"><img src="images/celtics.png"></a>
+              <div id="myModal-12" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">BOSTON CELTICS</h4>
+                    </div>
+                    <div class="modal-body">
+                      <table class="table">
+                        <thead class="thead-inverse">
+                        <thead>
+                          <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Position</th>
+                            <th scope="col">Height</th>
+                            <th scope="col">Weight</th>
+                          </tr>
+                        </thead>
+                        <tbody id="e1-12">
+                          <!--api call-->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="el-113" onclick="popupFunction('http://localhost:5000/api/ind/roster','e1-13')">
+              <!--popup container for team el-113-->
+              <a href="#myModal-13" role="button" data-toggle="modal"><img src="images/indiana.png"></a>
+              <div id="myModal-13" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">INDIANA PACERS</h4>
+                    </div>
+                    <div class="modal-body">
+                      <table class="table">
+                        <thead class="thead-inverse">
+                        <thead>
+                          <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Position</th>
+                            <th scope="col">Height</th>
+                            <th scope="col">Weight</th>
+                          </tr>
+                        </thead>
+                        <tbody id="e1-13">
+                          <!--api call-->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="el-114" onclick="popupFunction('http://localhost:5000/api/cle/roster','e1-14')">
+              <!--popup container for team el-114-->
+              <a href="#myModal-14" role="button" data-toggle="modal"><img src="images/cavaliers.png"></a>
+              <div id="myModal-14" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title14">CLEVELAND CAVALIERS</h4>
+                    </div>
+                    <div class="modal-body">
+                      <table class="table">
+                        <thead class="thead-inverse">
+                        <thead>
+                          <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Position</th>
+                            <th scope="col">Height</th>
+                            <th scope="col">Weight</th>
+                          </tr>
+                        </thead>
+                        <tbody id="e1-14">
+                          <!--api call-->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="el-2">
+            <h3>Western Conference</h3>
+            </br>
+            <div class="el-111" onclick="popupFunction('http://localhost:5000/api/hou/roster','e1-21')">
+              <!--popup container for team el-111-->
+              <a href="#myModal-21" role="button" data-toggle="modal"><img src="images/rockets.png"></a>
+              <div id="myModal-21" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">HOUSTON ROCKETS</h4>
+                    </div>
+                    <div class="modal-body">
+                      <table class="table">
+                        <thead class="thead-inverse">
+                        <thead>
+                          <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Position</th>
+                            <th scope="col">Height</th>
+                            <th scope="col">Weight</th>
+                          </tr>
+                        </thead>
+                        <tbody id="e1-21">
+                          <!--api call-->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="el-112" onclick="popupFunction('http://localhost:5000/api/gsw/roster','e1-22')">
+              <!--popup container for team el-112-->
+              <a href="#myModal-22" role="button" data-toggle="modal"><img src="images/goldenstate.png"></a>
+              <div id="myModal-22" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">GOLDEN STATE WARRIORS</h4>
+                    </div>
+                    <div class="modal-body">
+                      <table class="table">
+                        <thead class="thead-inverse">
+                        <thead>
+                          <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Position</th>
+                            <th scope="col">Height</th>
+                            <th scope="col">Weight</th>
+                          </tr>
+                        </thead>
+                        <tbody id="e1-22">
+                          <!--api call-->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="el-113" onclick="popupFunction('http://localhost:5000/api/por/roster','e1-23')">
+              <!--popup container for team el-113-->
+              <a href="#myModal-23" role="button" data-toggle="modal"><img src="images/portland.png"></a>
+              <div id="myModal-23" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">PORTLAND TRAIL BLAZERS</h4>
+                    </div>
+                    <div class="modal-body">
+                      <table class="table">
+                        <thead class="thead-inverse">
+                        <thead>
+                          <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Position</th>
+                            <th scope="col">Height</th>
+                            <th scope="col">Weight</th>
+                          </tr>
+                        </thead>
+                        <tbody id="e1-23">
+                          <!--api call-->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="el-114" onclick="popupFunction('http://localhost:5000/api/sas/roster','e1-24')">
+              <!--popup container for team el-114-->
+              <a href="#myModal-24" role="button" data-toggle="modal"><img src="images/sas.png"></a>
+              <div id="myModal-24" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" id="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">SAN ANTONIO</h4>
+                    </div>
+                    <div class="modal-body">
+                      <table class="table">
+                        <thead class="thead-inverse">
+                        <thead>
+                          <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Position</th>
+                            <th scope="col">Height</th>
+                            <th scope="col">Weight</th>
+                          </tr>
+                        </thead>
+                        <tbody id="e1-24" class="e1">
+                          <!--api call-->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <script>
+            // When the user clicks on <div>, open the popup
+            function popupFunction(url, bodyName){
+            				var xmlHttp = new XMLHttpRequest();
+            				xmlHttp.open( "GET", url , false ); // false for synchronous request
+            				xmlHttp.send( null );
+            				setResponse(xmlHttp.responseText, bodyName);
+            				return xmlHttp.responseText;
+            }
+            function setResponse(responseText, bodyName){
+            	var responseJSON = $.parseJSON(responseText);
+            	var tr;
+				var tbody = document.getElementById(bodyName);
+				$(tbody).empty();
+                for (var i = 0; i < responseJSON.length; i++) {
+                    tr = $('<tr/>');
+            		tr.append("<td>" + responseJSON[i].num + "</td>");
+            		tr.append("<td>" + responseJSON[i].name + "</td>");
+            		tr.append("<td>" + responseJSON[i].pos + "</td>");
+                    tr.append("<td>" + responseJSON[i].height + "</td>");
+                    tr.append("<td>" + responseJSON[i].weight + "</td>");
+            		var x = document.getElementById(bodyName);
+            		$(x).append(tr);
+                }
+            }
+          </script>
+        </div>
+      </div>
+      <!--//end-banner-->
+      <!--/start-main-->
+      <div class="main-content">
+        <!--/soccer-inner-->
+        <div class="soccer-inner">
+          <!--/soccer-left-part-->
+          <div class="col-md-8 soccer-left-part">
+            <!--/about-->
+            <div class="about" id="about">
+              <h3 class="tittle">About</h3>
+              <div class="sap_tabs">
+                <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+                  <ul class="resp-tabs-list">
+                    <li class="resp-tab-item grid1" aria-controls="tab_item-0" role="tab"><span>NEXT MATCH</span></li>
+                    <li class="resp-tab-item grid2" aria-controls="tab_item-1" role="tab" onclick="tabFunction('http://localhost:5000/api/record/east','tab-2')"><span>LEAGUE TABLE : EASTERN CONFERENCE</span></li>
+                    <li class="resp-tab-item grid3" aria-controls="tab_item-1" role="tab" onclick="tabFunction('http://localhost:5000/api/record/west','tab-3')"><span>LEAGUE TABLE : WESTERN CONFERENCE</span></li>
+                  </ul>
+                  <div class="resp-tabs-container">
+                    <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
+                      <div class="facts">
+                        <div class="tab_list">
+                          <table>
+                            <tbody>
+                              <tr>
+                                <td class="one">01 June 10:00</td>
+                                <td class="one">Juventus</td>
+                                <td class="one">VS</td>
+                                <td class="one">Sampdoria</td>
+                              </tr>
+                              <tr>
+                                <td class="one">01 June 19:00</td>
+                                <td class="one">Pro Soccer</td>
+                                <td class="one">VS</td>
+                                <td class="one">Genoa</td>
+                              </tr>
+                              <tr>
+                                <td class="one">01 June 12:00</td>
+                                <td class="one">Atlanta</td>
+                                <td class="one">VS</td>
+                                <td class="one">Napoli</td>
+                              </tr>
+                              <tr>
+                                <td class="one">01 June 30:00</td>
+                                <td class="one">Atlanta</td>
+                                <td class="one">VS</td>
+                                <td class="one">Fiorentina</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
                       </div>
-				</div>
-				</div>
-			</section>
-		 </div>
-		 <!--//accordation_menu-->
-		
-							
-										  	<!--//connect-->
-		            </div>
-			         <!--//soccer-right-part-->
-		           <div class="clearfix"> </div>
-	           </div>
-			  
-			</div>
-		<!--//soccer-inner-->
-	 </div>
-	<!--/start-footer-section-->
-			<div class="footer-section">
-			   <div class="container">
-					<div class="footer-grids">
-						<!--div class="col-md-4 footer-grid">
-						<h4><span>LATEST</span> PICKS</h4>
-						  <div class="editor-pics">
-							 <div class="col-md-3 item-pic">
-							   <img src="images/f1.jpg" class="img-responsive" alt=""/>
-
-							   </div>
-					   	        <div class="col-md-9 item-details">
-							    	<h5 class="inner"><a href="#">More Than 120 ER Visits Linked To Synthetic WordPress In NYC...</a></h5>
-								      <div class="td-post-date">Feb 22, 2015</div>
-							     </div>
-								<div class="clearfix"></div>
-							</div>
-							 <div class="editor-pics">
-							 <div class="col-md-3 item-pic">
-							   <img src="images/f2.jpg" class="img-responsive" alt=""/>
-
-							   </div>
-					   	        <div class="col-md-9 item-details">
-							    	<h5 class="inner"><a href="#">More Than 120 ER Visits Linked To Synthetic WordPress In NYC...</a></h5>
-								      <div class="td-post-date">Feb 22, 2015</div>
-							     </div>
-								<div class="clearfix"></div>
-							</div>
-		
-						</div>
-						<div class="col-md-4 footer-grid">
-							<h4><span>POPULAR</span> POSTS</h4>
-								<div class="editor-pics">
-										 <div class="col-md-3 item-pic">
-										   <img src="images/f4.jpg" class="img-responsive" alt=""/>
-
-										   </div>
-											<div class="col-md-9 item-details">
-												<h5 class="inner"><a href="#">More Than 120 ER Visits Linked To Synthetic WordPress In NYC...</a></h5>
-												  <div class="td-post-date">Feb 22, 2015</div>
-											 </div>
-											<div class="clearfix"></div>
-										</div>
-										<div class="editor-pics">
-							 <div class="col-md-3 item-pic">
-							   <img src="images/f3.jpg" class="img-responsive" alt=""/>
-
-							   </div>
-					   	        <div class="col-md-9 item-details">
-							    	<h5 class="inner"><a href="#">More Than 120 ER Visits Linked To Synthetic WordPress In NYC...</a></h5>
-								      <div class="td-post-date">Feb 22, 2015</div>
-							     </div>
-								<div class="clearfix"></div>
-							</div>
-
-						</div>
-						<div class="col-md-4 footer-grid third">
-								<h4><span>News</span>Letter</h4>
-							       <div class="sign_up">
-										<p class="sign">Sign up to receive our free newsletters!</p>
-										<form>
-											<input type="text" class="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}">
-											<input type="text" class="text" value="Email Address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email Address';}">
-											<input type="submit" value="submit">
-										</form>
-									</div>
-						</div-->
-						<div class="clearfix"></div>
-					</div>
-				</div>
-			</div>
-	<!--//end-footer-section-->
-			<!--/start-copyright-section-->
-				<div class="copyright">
-						  <p>&copy; 2018 NBALeague. All Rights Reserved | Design by <a href="http://w3layouts.com/">W3layouts</a> </p>
-					</div>
-
-
-				<!--start-smoth-scrolling-->
-						<script type="text/javascript">
-									$(document).ready(function() {
-										/*
-										var defaults = {
-								  			containerID: 'toTop', // fading element id
-											containerHoverID: 'toTopHover', // fading element hover id
-											scrollSpeed: 1200,
-											easingType: 'linear' 
-								 		};
-										*/
-										
-										$().UItoTop({ easingType: 'easeOutQuart' });
-										
-									});
-								</script>
-		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-
-
-<!--JS-->
-<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
-
-<!--//JS-->
-</body>
+                    </div>
+                    <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1" >
+                      <div class="facts">
+                        <div class="tab_list">
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Team</th>
+                                <th>W</th>
+                                <th>L</th>
+                                <th>Pct</th>
+                              </tr>
+                            </thead>
+                            <tbody  id="tab-2">
+                              <!--api call-->
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-2">
+                      <div class="facts">
+                        <div class="tab_list">
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Team</th>
+                                <th>W</th>
+                                <th>L</th>
+                                <th>Pct</th>
+                              </tr>
+                            </thead>
+                            <tbody id="tab-3">
+                              <!--api call-->
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    <script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                      $(document).ready(function () {
+                      	$('#horizontalTab').easyResponsiveTabs({
+                      		type: 'default', //Types: default, vertical, accordion           
+                      		width: 'auto', //auto or any width like 600px
+                      		fit: true   // 100% fit in a container
+                      	});
+                      });
+                        
+                    </script>
+                    <script>
+                      // When the user clicks on tab show details
+                      function tabFunction(url, tabName){
+                      		var xmlHttp = new XMLHttpRequest();
+                      		xmlHttp.open( "GET", url , false ); // false for synchronous request
+                      		xmlHttp.send( null );
+                      		settabResponse(xmlHttp.responseText, tabName);
+                      		return xmlHttp.responseText;
+                      }
+                      function settabResponse(response, tabName){
+                      var responseJSON = $.parseJSON(response);
+                      var tr;
+					  var tbody = document.getElementById(tabName);
+					  $(tbody).empty();
+                      for (var i = 0; i < responseJSON.length; i++) {
+                      tr = $('<tr/>');
+                      tr.append("<td>" + responseJSON[i].team + "</td>");
+                      tr.append("<td>" + responseJSON[i].w + "</td>");
+                      tr.append("<td>" + responseJSON[i].l + "</td>");
+                      tr.append("<td>" + responseJSON[i].pct + "</td>");
+                      var t = document.getElementById(tabName);
+                      $(t).append(tr);
+                      }
+                      }
+                    </script>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--//about-->
+            <!--/players-->
+            <!--banner Slider starts Here-->
+            <script src="js/responsiveslides.min.js"></script>
+            <script>
+              // You can also use "$(window).load(function() {"
+              $(function () {
+                // Slideshow 3
+                $("#slider3").responsiveSlides({
+              	auto: true,
+              	pager:false,
+              	nav: true,
+              	speed: 500,
+              	namespace: "callbacks",
+              	before: function () {
+              	  $('.events').append("<li>before event fired.</li>");
+              	},
+              	after: function () {
+              	  $('.events').append("<li>after event fired.</li>");
+              	}
+                });
+              
+              });
+               
+            </script>
+          </div>
+          <!--//soccer-left-part-->
+          <!--/soccer-right-part-->
+          <div class="col-md-4 soccer-right-part">
+            <!-- requried-jsfiles-for owl -->
+            <script src="js/owl.carousel.js"></script>
+            <script>
+              $(document).ready(function() {
+                $("#owl-demo").owlCarousel({
+              items :1,
+              lazyLoad : true,
+              autoPlay : false,
+              navigation : true,
+              navigationText :  true,
+              pagination : false,
+              responsiveBreakpoints: { 
+              portrait: { 
+              changePoint:480,
+              visibleItems: 2
+              }, 
+              landscape: { 
+              changePoint:640,
+              visibleItems: 2
+              },
+              tablet: { 
+              changePoint:768,
+              visibleItems: 3
+              }
+              }
+              });
+              });
+            </script>
+            <!-- //requried-jsfiles-for owl -->
+            <!--//accordation_menu-->
+            <div class="list_vertical">
+              <section class="accordation_menu">
+                <div>
+                  <input id="label-1" name="lida" type="radio" checked="">
+                  <label for="label-1" id="item1"><i class="ferme"> </i>Popular Tweets<i class="icon-plus-sign i-right1"></i><i class="icon-minus-sign i-right2"></i></label>
+                  <div class="content" id="a1">
+                    <div class="scrollbar" id="style-2">
+                      <div class="force-overflow">
+                        <div class="popular-post-grids">
+                          <div class="popular-post-grid">
+                            <div class="post-img">
+                              <a href="single.html"><img src="images/f1.jpg" alt=""></a>
+                            </div>
+                            <div class="post-text">
+                              <a class="pp-title" href="single.html"> Popular Tweet 1</a>
+                              <p>On Feb 25 <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>3 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a></p>
+                            </div>
+                            <div class="clearfix"></div>
+                          </div>
+                          <div class="popular-post-grid">
+                            <div class="post-img">
+                              <a href="single.html"><img src="images/f2.jpg" alt=""></a>
+                            </div>
+                            <div class="post-text">
+                              <a class="pp-title" href="single.html"> Popular Tweet 2</a>
+                              <p>On Jan 14 <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>2 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a></p>
+                            </div>
+                            <div class="clearfix"></div>
+                          </div>
+                          <div class="popular-post-grid">
+                            <div class="post-img">
+                              <a href="single.html"><img src="images/f3.jpg" alt=""></a>
+                            </div>
+                            <div class="post-text">
+                              <a class="pp-title" href="single.html"> Popular Tweet 3</a>
+                              <p>On Jan 25 <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>0 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a></p>
+                            </div>
+                            <div class="clearfix"></div>
+                          </div>
+                          <div class="popular-post-grid">
+                            <div class="post-img">
+                              <a href="single.html"><img src="images/f4.jpg" alt=""></a>
+                            </div>
+                            <div class="post-text">
+                              <a class="pp-title" href="single.html"> Popular Tweet 5</a>
+                              <p>On Jan 25 <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>1 </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a></p>
+                            </div>
+                            <div class="clearfix"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <input id="label-2" name="lida" type="radio">
+                  <label for="label-2" id="item2"><i class="icon-leaf" id="i2"></i>Recent Tweets<i class="icon-plus-sign i-right1"></i><i class="icon-minus-sign i-right2"></i></label>
+                  <div class="content" id="a2">
+                    <div class="scrollbar" id="style-2">
+                      <a class="twitter-timeline" href="https://twitter.com/NBA?ref_src=twsrc%5Etfw">Tweets by NBA</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <input id="label-3" name="lida" type="radio">
+                  <label for="label-3" id="item3"><i class="icon-trophy" id="i3"></i>Comments<i class="icon-plus-sign i-right1"></i><i class="icon-minus-sign i-right2"></i></label>
+                  <div class="content" id="a3">
+                    <div class="scrollbar" id="style-2">
+                      <div class="force-overflow">
+                        <div class="response">
+                          <div class="media response-info">
+                            <div class="media-left response-text-left">
+                              <a href="#">
+                              <img class="media-object" src="images/icon1.png" alt="">
+                              </a>
+                              <h5><a href="#">User</a></h5>
+                            </div>
+                            <div class="media-body response-text-right">
+                              <p>User 1 comments here</p>
+                              <ul>
+                                <li>MARCH 01, 2018</li>
+                                <li><a href="single.html">Reply</a></li>
+                              </ul>
+                            </div>
+                            <div class="clearfix"> </div>
+                          </div>
+                          <div class="media response-info">
+                            <div class="media-left response-text-left">
+                              <a href="#">
+                              <img class="media-object" src="images/icon1.png" alt="">
+                              </a>
+                              <h5><a href="#">User</a></h5>
+                            </div>
+                            <div class="media-body response-text-right">
+                              <p>User 2 comments here</p>
+                              <ul>
+                                <li>JAN 26, 2018</li>
+                                <li><a href="single.html">Reply</a></li>
+                              </ul>
+                            </div>
+                            <div class="clearfix"> </div>
+                          </div>
+                          <div class="media response-info">
+                            <div class="media-left response-text-left">
+                              <a href="#">
+                              <img class="media-object" src="images/icon1.png" alt="">
+                              </a>
+                              <h5><a href="#">User</a></h5>
+                            </div>
+                            <div class="media-body response-text-right">
+                              <p>User 3 comments here</p>
+                              <ul>
+                                <li>JAN 10, 2018</li>
+                                <li><a href="single.html">Reply</a></li>
+                              </ul>
+                            </div>
+                            <div class="clearfix"> </div>
+                          </div>
+                          <div class="media response-info">
+                            <div class="media-left response-text-left">
+                              <a href="#">
+                              <img class="media-object" src="images/icon1.png" alt="">
+                              </a>
+                              <h5><a href="#">User</a></h5>
+                            </div>
+                            <div class="media-body response-text-right">
+                              <p>User 4 comments here</p>
+                              <ul>
+                                <li>FEB 13, 2018</li>
+                                <li><a href="single.html">Reply</a></li>
+                              </ul>
+                            </div>
+                            <div class="clearfix"> </div>
+                          </div>
+                          <div class="media response-info">
+                            <div class="media-left response-text-left">
+                              <a href="#">
+                              <img class="media-object" src="images/icon1.png" alt="">
+                              </a>
+                              <h5><a href="#">User</a></h5>
+                            </div>
+                            <div class="media-body response-text-right">
+                              <p>User 5 comments here</p>
+                              <ul>
+                                <li>JAN 28, 2018</li>
+                                <li><a href="single.html">Reply</a></li>
+                              </ul>
+                            </div>
+                            <div class="clearfix"> </div>
+                          </div>
+                          <div class="media response-info">
+                            <div class="media-left response-text-left">
+                              <a href="#">
+                              <img class="media-object" src="images/icon1.png" alt="">
+                              </a>
+                              <h5><a href="#">User</a></h5>
+                            </div>
+                            <div class="media-body response-text-right">
+                              <p>User 6 comments here</p>
+                              <ul>
+                                <li>FEB 12, 2018</li>
+                                <li><a href="single.html">Reply</a></li>
+                              </ul>
+                            </div>
+                            <div class="clearfix"> </div>
+                          </div>
+                          <div class="media response-info">
+                            <div class="media-left response-text-left">
+                              <a href="#">
+                              <img class="media-object" src="images/icon1.png" alt="">
+                              </a>
+                              <h5><a href="#">User</a></h5>
+                            </div>
+                            <div class="media-body response-text-right">
+                              <p>User 7 comments here</p>
+                              <ul>
+                                <li>JAN 25, 2018</li>
+                                <li><a href="single.html">Reply</a></li>
+                              </ul>
+                            </div>
+                            <div class="clearfix"> </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <!--//accordation_menu-->
+            <!--//connect-->
+          </div>
+          <!--//soccer-right-part-->
+          <div class="clearfix"> </div>
+        </div>
+      </div>
+      <!--//soccer-inner-->
+    </div>
+    <!--/start-footer-section-->
+    <div class="footer-section">
+      <div class="container">
+        <div class="footer-grids">
+          <!--div class="col-md-4 footer-grid">
+            <h4><span>LATEST</span> PICKS</h4>
+              <div class="editor-pics">
+            	 <div class="col-md-3 item-pic">
+            	   <img src="images/f1.jpg" class="img-responsive" alt=""/>
+            
+            	   </div>
+              	        <div class="col-md-9 item-details">
+            	    	<h5 class="inner"><a href="#">More Than 120 ER Visits Linked To Synthetic WordPress In NYC...</a></h5>
+            		      <div class="td-post-date">Feb 22, 2015</div>
+            	     </div>
+            		<div class="clearfix"></div>
+            	</div>
+            	 <div class="editor-pics">
+            	 <div class="col-md-3 item-pic">
+            	   <img src="images/f2.jpg" class="img-responsive" alt=""/>
+            
+            	   </div>
+              	        <div class="col-md-9 item-details">
+            	    	<h5 class="inner"><a href="#">More Than 120 ER Visits Linked To Synthetic WordPress In NYC...</a></h5>
+            		      <div class="td-post-date">Feb 22, 2015</div>
+            	     </div>
+            		<div class="clearfix"></div>
+            	</div>
+            
+            </div>
+            <div class="col-md-4 footer-grid">
+            	<h4><span>POPULAR</span> POSTS</h4>
+            		<div class="editor-pics">
+            				 <div class="col-md-3 item-pic">
+            				   <img src="images/f4.jpg" class="img-responsive" alt=""/>
+            
+            				   </div>
+            					<div class="col-md-9 item-details">
+            						<h5 class="inner"><a href="#">More Than 120 ER Visits Linked To Synthetic WordPress In NYC...</a></h5>
+            						  <div class="td-post-date">Feb 22, 2015</div>
+            					 </div>
+            					<div class="clearfix"></div>
+            				</div>
+            				<div class="editor-pics">
+            	 <div class="col-md-3 item-pic">
+            	   <img src="images/f3.jpg" class="img-responsive" alt=""/>
+            
+            	   </div>
+              	        <div class="col-md-9 item-details">
+            	    	<h5 class="inner"><a href="#">More Than 120 ER Visits Linked To Synthetic WordPress In NYC...</a></h5>
+            		      <div class="td-post-date">Feb 22, 2015</div>
+            	     </div>
+            		<div class="clearfix"></div>
+            	</div>
+            
+            </div>
+            <div class="col-md-4 footer-grid third">
+            		<h4><span>News</span>Letter</h4>
+            	       <div class="sign_up">
+            				<p class="sign">Sign up to receive our free newsletters!</p>
+            				<form>
+            					<input type="text" class="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}">
+            					<input type="text" class="text" value="Email Address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email Address';}">
+            					<input type="submit" value="submit">
+            				</form>
+            			</div>
+            </div-->
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+    <!--//end-footer-section-->
+    <!--/start-copyright-section-->
+    <div class="copyright">
+      <p>&copy; 2018 NBALeague. All Rights Reserved | Design by <a href="http://w3layouts.com/">W3layouts</a> </p>
+    </div>
+    <!--start-smoth-scrolling-->
+    <script type="text/javascript">
+      $(document).ready(function() {
+      	/*
+      	var defaults = {
+       			containerID: 'toTop', // fading element id
+      		containerHoverID: 'toTopHover', // fading element hover id
+      		scrollSpeed: 1200,
+      		easingType: 'linear' 
+      		};
+      	*/
+      	
+      	$().UItoTop({ easingType: 'easeOutQuart' });
+      	
+      });
+    </script>
+    <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+    <!--JS-->
+    <script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+    <!--//JS-->
+  </body>
 </html>
