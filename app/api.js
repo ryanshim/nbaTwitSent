@@ -10,6 +10,7 @@ router.get('/', function(req, res) {
 /api/record\t\treturns the entire nba win-loss\n\
 /api/record/east\treturns the nba eastern conference win-loss\n\
 /api/record/west\treturns the nba western conference win-loss\n\
+/api/schedule\t\treturns game date, time, home team, home score, visitor team, and visitor score\n\
 /api/tweets\t\treturns 100 most recent tweets with users and timestamp\n\
 /api/tweetscore\t\treturns the entire nba average twitter sentiment score by team\n\
 /api/tweetscore/day\treturns the entire nba average twitter sentiment score by team and day\n\
@@ -74,7 +75,12 @@ router.get('/record', function(req, res) {
     var params = [];
     stats_query(sql, params, res);
 });
-router.get('/tweets/', function(req, res) {
+router.get('/schedule', function(req, res) {
+    var sql = "SELECT * FROM schedule ORDER BY date";
+    var params = [];
+    stats_query(sql, params, res)
+});
+router.get('/tweets', function(req, res) {
     var sql = "SELECT strftime('%Y-%m-%d %H', date), user, tweet FROM ( SELECT * FROM tweets ORDER BY date DESC LIMIT 100 ) qry ORDER BY date"
     var params = [];
     tweets_query(sql, params, res);

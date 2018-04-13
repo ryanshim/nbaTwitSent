@@ -10,5 +10,8 @@ c.execute('''CREATE TABLE teams
 c.execute('''CREATE TABLE players
                 (team text, num real, name text, pos text, height text, weight real)''')
 
+c.execute('''CREATE TABLE schedule
+                (date text, time text, h_team text, h_score real, v_team text, v_score real)''')
+
 conn.commit()
 conn.close()

@@ -1,4 +1,5 @@
 # NBA Team Statistics Collector
+import requests
 import sqlite3
 import json
 from nba_py import team
@@ -33,7 +34,7 @@ def populate_teams():
         conn.commit()
 
     conn.close()
-    print('Done')
+    print('\tDone')
 
 def populate_players():
     print('Retrieving players stats')
@@ -59,9 +60,49 @@ def populate_players():
             conn.commit()
 
     conn.close()
-    print('Done')
+    print('\tDone')
+
+def populate_schedule():
+    print('Retrieving nba schedule and scores')
+    conn = sqlite3.connect('../data/data_team.db')
+    c = conn.cursor()
+
+    c.execute('DELETE FROM teams')
+    conn.commit()
+
+    nba_response = requests.get(url='http://data.nba.com/data/10s/v2015/json' + \
+            '/mobile_teams/nba/2017/league/00_full_schedule.json').json()
+
+    schedule = nba_response['lscd']
+    schedule = schedule[len(schedule)-1]['mscd']['g']   # select most recent month
+
+    for game in schedule:
+        game_date = game['gdte']
+        game_time = ""
+        home_team = game['h']['ta']
+        away_team = game['v']['ta']
+        home_score = None
+        away_score = None 
+
+        # get match results
+        if (game['h']['s'] is not "") and (game['v']['s'] is not ""):
+            home_score = int(game['h']['s'])
+            away_score = int(game['v']['s'])
+
+        # check if game time is set
+        if game['etm'][11:]:
+            game_time = game['etm'][11:]
+        else:
+            game_time = 'TBD'
+
+        row = (game_date, game_time, home_team, home_score, away_team, away_score)
+        c.execute('INSERT INTO schedule VALUES (?,?,?,?,?,?)', row)
+        conn.commit()
+
+    conn.close()
+    print('\tDone')
 
 if __name__ == '__main__':
     populate_teams()
     populate_players()
-
+    populate_schedule()
