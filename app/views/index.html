@@ -16,15 +16,8 @@
     <script src="js/jquery.min.js"> </script>
     <script type="text/javascript" src="js/move-top.js"></script>
     <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
     <!--/script-->
-    <script type="text/javascript">
-      jQuery(document).ready(function($) {
-      	$(".scroll").click(function(event){		
-      		event.preventDefault();
-      		$('html,body').animate({scrollTop:$(this.hash).offset().top},900);
-      	});
-      });
-    </script>
   </head>
   <body>
     <div class="container">
@@ -83,7 +76,7 @@
           <div class="el-1">
             <h3>Eastern Conference</h3>
             </br>
-	      <div id="e1-11jauye" class="el-111" onclick="popupFunction('http://localhost:5000/api/tor/roster','e1-11')">
+	      <div id="e1-111" class="el-111" onclick="popupFunction('http://localhost:5000/api/tor/roster','e1-11')">
               <!--popup container for team el-111-->
               <a href="#myModal-11" role="button" data-toggle="modal"><img src="images/raptors.png"></a>
               <div id="myModal-11" class="modal fade" role="dialog">
@@ -117,7 +110,7 @@
             </div>
             <div class="el-112" onclick="popupFunction('http://localhost:5000/api/bos/roster','e1-12')">
               <!--popup container for team el-112-->
-              <a href="#m2yModal-12" role="button" data-toggle="modal"><img src="images/celtics.png"></a>
+              <a href="#myModal-12" role="button" data-toggle="modal"><img src="images/celtics.png"></a>
               <div id="myModal-12" class="modal fade" role="dialog">
                 <div class="modal-dialog">
                   <!-- Modal content-->
@@ -344,32 +337,6 @@
               </div>
             </div>
           </div>
-          <script>
-            // When the user clicks on <div>, open the popup
-            function popupFunction(url, bodyName){
-            				var xmlHttp = new XMLHttpRequest();
-            				xmlHttp.open( "GET", url , false ); // false for synchronous request
-            				xmlHttp.send( null );
-            				setResponse(xmlHttp.responseText, bodyName);
-            				return xmlHttp.responseText;
-            }
-            function setResponse(responseText, bodyName){
-            	var responseJSON = $.parseJSON(responseText);
-            	var tr;
-				var tbody = document.getElementById(bodyName);
-				$(tbody).empty();
-                for (var i = 0; i < responseJSON.length; i++) {
-                    tr = $('<tr/>');
-            		tr.append("<td>" + responseJSON[i].num + "</td>");
-            		tr.append("<td>" + responseJSON[i].name + "</td>");
-            		tr.append("<td>" + responseJSON[i].pos + "</td>");
-                    tr.append("<td>" + responseJSON[i].height + "</td>");
-                    tr.append("<td>" + responseJSON[i].weight + "</td>");
-            		var x = document.getElementById(bodyName);
-            		$(x).append(tr);
-                }
-            }
-          </script>
         </div>
       </div>
       <!--//end-banner-->
@@ -473,31 +440,6 @@
                       });
                         
                     </script>
-                    <script>
-                      // When the user clicks on tab show details
-                      function tabFunction(url, tabName){
-                      		var xmlHttp = new XMLHttpRequest();
-                      		xmlHttp.open( "GET", url , false ); // false for synchronous request
-                      		xmlHttp.send( null );
-                      		settabResponse(xmlHttp.responseText, tabName);
-                      		return xmlHttp.responseText;
-                      }
-                      function settabResponse(response, tabName){
-                      var responseJSON = $.parseJSON(response);
-                      var tr;
-					  var tbody = document.getElementById(tabName);
-					  $(tbody).empty();
-                      for (var i = 0; i < responseJSON.length; i++) {
-                      tr = $('<tr/>');
-                      tr.append("<td>" + responseJSON[i].team + "</td>");
-                      tr.append("<td>" + responseJSON[i].w + "</td>");
-                      tr.append("<td>" + responseJSON[i].l + "</td>");
-                      tr.append("<td>" + responseJSON[i].pct + "</td>");
-                      var t = document.getElementById(tabName);
-                      $(t).append(tr);
-                      }
-                      }
-                    </script>
                   </div>
                 </div>
               </div>
@@ -505,7 +447,6 @@
             <!--//about-->
             <!--/players-->
             <!--banner Slider starts Here-->
-            <script src="js/responsiveslides.min.js"></script>
             <script>
               // You can also use "$(window).load(function() {"
               $(function () {
