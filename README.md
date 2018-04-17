@@ -1,7 +1,7 @@
 # nbaTwitSent
 
 ### Objective
-This project performs sentiment analysis on the NBA derived from Twitter data.
+This project performs sentiment nalysis on the NBA derived from Twitter data.
 
 * /app - webapp files
 * /data - database related files
