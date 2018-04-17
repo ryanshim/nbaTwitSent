@@ -352,7 +352,7 @@
               <div class="sap_tabs">
                 <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
                   <ul class="resp-tabs-list">
-                    <li class="resp-tab-item grid1" aria-controls="tab_item-0" role="tab"><span>NEXT MATCH</span></li>
+                    <li class="resp-tab-item grid1" aria-controls="tab_item-0" role="tab" onload="tabFunction('http://localhost:5000/api/schedule','tab-2')"><span>SCHEDULE</span></li>
                     <li class="resp-tab-item grid2" aria-controls="tab_item-1" role="tab" onclick="tabFunction('http://localhost:5000/api/record/east','tab-2')"><span>LEAGUE TABLE : EASTERN CONFERENCE</span></li>
                     <li class="resp-tab-item grid3" aria-controls="tab_item-1" role="tab" onclick="tabFunction('http://localhost:5000/api/record/west','tab-3')"><span>LEAGUE TABLE : WESTERN CONFERENCE</span></li>
                   </ul>
@@ -361,31 +361,18 @@
                       <div class="facts">
                         <div class="tab_list">
                           <table>
-                            <tbody>
+						  <thead>
                               <tr>
-                                <td class="one">01 June 10:00</td>
-                                <td class="one">Juventus</td>
-                                <td class="one">VS</td>
-                                <td class="one">Sampdoria</td>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Team1</th>
+                                <th>Score</th>
+								<th>Team2</th>
+                                <th>Score</th>
                               </tr>
-                              <tr>
-                                <td class="one">01 June 19:00</td>
-                                <td class="one">Pro Soccer</td>
-                                <td class="one">VS</td>
-                                <td class="one">Genoa</td>
-                              </tr>
-                              <tr>
-                                <td class="one">01 June 12:00</td>
-                                <td class="one">Atlanta</td>
-                                <td class="one">VS</td>
-                                <td class="one">Napoli</td>
-                              </tr>
-                              <tr>
-                                <td class="one">01 June 30:00</td>
-                                <td class="one">Atlanta</td>
-                                <td class="one">VS</td>
-                                <td class="one">Fiorentina</td>
-                              </tr>
+                            </thead>
+                            <tbody id="tab-1">
+                              <!--api call for schedule-->
                             </tbody>
                           </table>
                         </div>
@@ -404,7 +391,7 @@
                               </tr>
                             </thead>
                             <tbody  id="tab-2">
-                              <!--api call-->
+                              <!--api call for east-->
                             </tbody>
                           </table>
                         </div>
@@ -423,7 +410,7 @@
                               </tr>
                             </thead>
                             <tbody id="tab-3">
-                              <!--api call-->
+                              <!--api call for west-->
                             </tbody>
                           </table>
                         </div>
