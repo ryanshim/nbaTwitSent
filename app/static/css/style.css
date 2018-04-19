@@ -289,37 +289,18 @@ label{
 }
 /*--div for teams ends here--*/
 
-/*--divs for teams standings--*/
-.est-conf, .wst-conf{
-	float: left;
-	margin-top: 0.5%;
-	margin-left: 2%;
+/*--div for teams standings--*/
+.standings-main{
+	margin-top: 1%;
 	text-align: center;
-	pointer-events: none;
-  cursor: default;
-  text-decoration:none;
-  color:black;
-	
+	margin-bottom: 1%;	
 }
-.est-conf h3, .wst-conf h3{
-	background-color: #d9d9d9;
-	border: 2px;
-    padding: 10px;
-}
-
 .mag-innert-left {
     background-color: #fff;
     padding: 1em 1em;
 	    border: 1px solid rgba(231,231,231,1.00);
 }
 /*--banner-inner--*/
-#slider2,
-#slider3 {
-  box-shadow: none;
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
-  margin: 0 auto;
-}
 .rslides_tabs li:first-child {
   margin-left: 0;
 }
@@ -396,31 +377,6 @@ label{
     right: auto;
     background-position: left top;
     left:86.7%;
-}
-#slider3-pager a {
-  display: inline-block;
-}
-#slider3-pager span{
-  float: left;
-}
-#slider3-pager span{
-	width:100px;
-	height:15px;
-	background:#fff;
-	display:inline-block;
-	border-radius:30em;
-	opacity:0.6;
-}
-#slider3-pager .rslides_here a {
-  background: #FFF;
-  border-radius:30em;
-  opacity:1;
-}
-#slider3-pager a {
-  padding: 0;
-}
-#slider3-pager li{
-	display:inline-block;
 }
 .rslides {
   position: relative;

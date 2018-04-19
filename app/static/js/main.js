@@ -1,4 +1,10 @@
-	
+	$(document).ready(function () {
+                      	$('#horizontalTab').easyResponsiveTabs({
+                      		type: 'default', //Types: default, vertical, accordion           
+                      		width: 'auto', //auto or any width like 600px
+                      		fit: true   // 100% fit in a container
+                      	});
+                      });
 		// When the user clicks on <div>, open the popup
             function popupFunction(url, bodyName){
             				var xmlHttp = new XMLHttpRequest();
@@ -61,8 +67,7 @@
 				$(tbody).empty();
                 for (var i = 0; i < responseJSON.length; i++) {
                     tr = $('<tr/>');
-            		tr.append("<td>" + responseJSON[i].date + "</td>");
-            		tr.append("<td>" + responseJSON[i].time + "</td>");
+            		tr.append("<td>" + responseJSON[i].date + "|" + responseJSON[i].time + "</td>");
             		tr.append("<td>" + responseJSON[i].h_team + "</td>");
                     tr.append("<td>" + responseJSON[i].h_score + "</td>");
                     tr.append("<td>" + responseJSON[i].v_team + "</td>");
@@ -71,3 +76,28 @@
             		$(s).append(tr);
                 }
             }
+			//function for standings.html file 
+			function stdFunction(url, stdName){
+            				var xmlHttp = new XMLHttpRequest();
+            				xmlHttp.open( "GET", url , false ); // false for synchronous request
+            				xmlHttp.send( null );
+            				setstdResponse(xmlHttp.responseText, stdName);
+            				return xmlHttp.responseText;
+            }
+            function setstdResponse(response, stdName){
+            	var responseJSON = $.parseJSON(response);
+            	var tr;
+				var tbody = document.getElementById(stdName);
+				$(tbody).empty();
+                for (var i = 0; i < responseJSON.length; i++) {
+                    tr = $('<tr/>');
+            		tr.append("<td>" + responseJSON[i].team + "</td>");
+            		tr.append("<td>" + responseJSON[i].conf + "</td>");
+            		tr.append("<td>" + responseJSON[i].w + "</td>");
+                    tr.append("<td>" + responseJSON[i].l + "</td>");
+                    tr.append("<td>" + responseJSON[i].pct + "</td>");
+            		var s = document.getElementById(stdName);
+            		$(r).append(tr);
+                }
+            }
+ 
