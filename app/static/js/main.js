@@ -96,7 +96,7 @@
             		tr.append("<td>" + responseJSON[i].w + "</td>");
                     tr.append("<td>" + responseJSON[i].l + "</td>");
                     tr.append("<td>" + responseJSON[i].pct + "</td>");
-            		var s = document.getElementById(stdName);
+            		var r = document.getElementById(stdName);
             		$(r).append(tr);
                 }
             }

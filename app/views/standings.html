@@ -18,7 +18,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 </head>
-<body> 
+<body onload="stdFunction('http://localhost:5000/api/record','std-table');"> 
  <div class="container">
   <div class="header" id="home">
 	 <div class="subhead white">
@@ -48,7 +48,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   </div>
  </div>
  <!--main section-->
- <div class="standings-main" onload="stdFunction('http://localhost:5000/api/record','std-table')">
+ <div class="standings-main">
  						<table>
 						  <thead>
                               <tr>
