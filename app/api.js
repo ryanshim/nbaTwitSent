@@ -10,7 +10,8 @@ router.get('/', function(req, res) {
 /api/record\t\treturns the entire nba win-loss\n\
 /api/record/east\treturns the nba eastern conference win-loss\n\
 /api/record/west\treturns the nba western conference win-loss\n\
-/api/schedule\t\treturns game date, time, home team, home score, visitor team, and visitor score\n\
+/api/schedule\t\treturns five future games that have not been started\n\
+/api/schedule/today\treturns games occurring today in format: date, time, home team, home score, visitor team, and visitor score\n\
 /api/tweets\t\treturns 100 most recent tweets with users and timestamp\n\
 /api/tweetscore\t\treturns the entire nba average twitter sentiment score by team\n\
 /api/tweetscore/day\treturns the entire nba average twitter sentiment score by team and day\n\
@@ -76,12 +77,32 @@ router.get('/record', function(req, res) {
     stats_query(sql, params, res);
 });
 router.get('/schedule', function(req, res) {
-    var sql = "SELECT * FROM schedule ORDER BY date";
+    var today = new Date();
+    var month = today.getMonth() + 1;
+    if (month < 10) {
+        month = "0" + month;
+    }
+    var date = today.getDate();
+    var year = today.getFullYear();
+    var sql = "SELECT * FROM schedule WHERE h_score is null and date >= '" + year + "-" + month + "-" + date + "' ORDER BY date ASC LIMIT 5";
+    var params = [];
+    stats_query(sql, params, res)
+});
+
+router.get('/schedule/today', function(req, res) {
+    var today = new Date();
+    var month = today.getMonth() + 1;
+    if (month < 10) {
+        month = "0" + month;
+    }
+    var date = today.getDate();
+    var year = today.getFullYear();
+    var sql = "SELECT * FROM schedule WHERE date >= '" + year + "-" + month + "-" + date + "' ORDER BY date ASC LIMIT 5";
     var params = [];
     stats_query(sql, params, res)
 });
 router.get('/tweets', function(req, res) {
-    var sql = "SELECT strftime('%Y-%m-%d %H', date), user, tweet FROM ( SELECT * FROM tweets ORDER BY date DESC LIMIT 100 ) qry ORDER BY date"
+    var sql = "SELECT strftime('%Y-%m-%d %H', date) as date, user, tweet FROM ( SELECT * FROM tweets ORDER BY date DESC LIMIT 100 ) qry ORDER BY date"
     var params = [];
     tweets_query(sql, params, res);
 });
