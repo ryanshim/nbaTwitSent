@@ -67,11 +67,9 @@
 				$(tbody).empty();
                 for (var i = 0; i < responseJSON.length; i++) {
                     tr = $('<tr/>');
-            		tr.append("<td>" + responseJSON[i].date + "|" + responseJSON[i].time + "</td>");
+            		tr.append("<td>" + responseJSON[i].date + "</td>");
             		tr.append("<td>" + responseJSON[i].h_team + "</td>");
-                    tr.append("<td>" + responseJSON[i].h_score + "</td>");
                     tr.append("<td>" + responseJSON[i].v_team + "</td>");
-					tr.append("<td>" + responseJSON[i].v_score + "</td>");
             		var s = document.getElementById(schName);
             		$(s).append(tr);
                 }
