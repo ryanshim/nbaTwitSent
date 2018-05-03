@@ -83,6 +83,9 @@ router.get('/schedule', function(req, res) {
         month = "0" + month;
     }
     var date = today.getDate();
+    if (date < 10) {
+        date = "0" + date;
+    }
     var year = today.getFullYear();
     var sql = "SELECT * FROM schedule WHERE h_score is null and date >= '" + year + "-" + month + "-" + date + "' ORDER BY date ASC LIMIT 5";
     var params = [];
@@ -96,6 +99,9 @@ router.get('/schedule/today', function(req, res) {
         month = "0" + month;
     }
     var date = today.getDate();
+    if (date < 10) {
+        date = "0" + date;
+    }
     var year = today.getFullYear();
     var sql = "SELECT * FROM schedule WHERE date >= '" + year + "-" + month + "-" + date + "' ORDER BY date ASC LIMIT 5";
     var params = [];
