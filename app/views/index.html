@@ -20,9 +20,10 @@
       <script src="js/owl.carousel.js"></script>
       <script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
       <script type="text/javascript" src="js/main.js"></script>
+	  <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script-->
       <!--/script-->
    </head>
-   <body>
+   <body onload="scheduleFunction('http://localhost:5000/api/schedule','tab-1');">
       <div class="container">
          <div class="header" id="home">
             <div class="subhead white">
@@ -30,8 +31,6 @@
                   <div class="navbar-header">
                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                      <span class="sr-only">Toggle navigation</span>
-                     <span class="icon-bar"></span>
-                     <span class="icon-bar"></span>
                      <span class="icon-bar"></span>
                      </button>
                      <a class="navbar-brand" href="index.html">
@@ -49,11 +48,6 @@
                         <li>
                            <a href="#about">
                               <h4>About</h4>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="teams.html">
-                              <h4>Teams</h4>
                            </a>
                         </li>
                         <li>
@@ -143,16 +137,16 @@
                         </div>
                      </div>
                   </div>
-                  <div class="el-113" onclick="popupFunction('http://localhost:5000/api/ind/roster','e1-13')">
+                  <div class="el-113" onclick="popupFunction('http://localhost:5000/api/phi/roster','e1-13')">
                      <!--popup container for team el-113-->
-                     <a href="#myModal-13" role="button" data-toggle="modal"><img src="images/indiana.png"></a>
+                     <a href="#myModal-13" role="button" data-toggle="modal"><img src="images/philadelphia.png"></a>
                      <div id="myModal-13" class="modal fade" role="dialog">
                         <div class="modal-dialog">
                            <!-- Modal content-->
                            <div class="modal-content">
                               <div class="modal-header">
                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                 <h4 class="modal-title">INDIANA PACERS</h4>
+                                 <h4 class="modal-title">PHILADELPHIA 76ERS</h4>
                               </div>
                               <div class="modal-body">
                                  <table class="table">
@@ -307,16 +301,16 @@
                         </div>
                      </div>
                   </div>
-                  <div class="el-114" onclick="popupFunction('http://localhost:5000/api/sas/roster','e1-24')">
+                  <div class="el-114" onclick="popupFunction('http://localhost:5000/api/okc/roster','e1-24')">
                      <!--popup container for team el-114-->
-                     <a href="#myModal-24" role="button" data-toggle="modal"><img src="images/sas.png"></a>
+                     <a href="#myModal-24" role="button" data-toggle="modal"><img src="images/oklahoma.png"></a>
                      <div id="myModal-24" class="modal fade" role="dialog">
                         <div class="modal-dialog">
                            <!-- Modal content-->
                            <div class="modal-content">
                               <div class="modal-header">
                                  <button type="button" class="close" id="close" data-dismiss="modal">&times;</button>
-                                 <h4 class="modal-title">SAN ANTONIO</h4>
+                                 <h4 class="modal-title">OKLAHOMA CITY THUNDER</h4>
                               </div>
                               <div class="modal-body">
                                  <table class="table">
@@ -355,7 +349,7 @@
                      <div class="sap_tabs">
                         <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
                            <ul class="resp-tabs-list">
-                              <li class="resp-tab-item grid1" aria-controls="tab_item-0" role="tab" onclick="scheduleFunction('http://localhost:5000/api/schedule','tab-1')"><span>SCHEDULE</span></li>
+                              <li class="resp-tab-item grid1" aria-controls="tab_item-0" role="tab" ><span>SCHEDULE</span></li>
                               <li class="resp-tab-item grid2" aria-controls="tab_item-1" role="tab" onclick="tabFunction('http://localhost:5000/api/record/east','tab-2')"><span>LEAGUE TABLE : EASTERN CONFERENCE</span></li>
                               <li class="resp-tab-item grid3" aria-controls="tab_item-1" role="tab" onclick="tabFunction('http://localhost:5000/api/record/west','tab-3')"><span>LEAGUE TABLE : WESTERN CONFERENCE</span></li>
                            </ul>
@@ -366,11 +360,9 @@
                                        <table>
                                           <thead>
                                              <tr>
-                                                <th>Date | Time</th>
-                                                <th>Home_Team</th>
-                                                <th>Score</th>
-                                                <th>Visitor_Team</th>
-                                                <th>Score</th>
+                                                <th>Date</th>
+                                                <th>Home-Team</th>
+                                                <th>Visitor-Team</th>
                                              </tr>
                                           </thead>
                                           <tbody id="tab-1">
@@ -387,9 +379,9 @@
                                           <thead>
                                              <tr>
                                                 <th>Team</th>
-                                                <th>W</th>
-                                                <th>L</th>
-                                                <th>Pct</th>
+                                                <th>Win</th>
+                                                <th>Loss</th>
+                                                <th>Win%</th>
                                              </tr>
                                           </thead>
                                           <tbody  id="tab-2">
@@ -406,9 +398,9 @@
                                           <thead>
                                              <tr>
                                                 <th>Team</th>
-                                                <th>W</th>
-                                                <th>L</th>
-                                                <th>Pct</th>
+                                                <th>Win</th>
+                                                <th>Loss</th>
+                                                <th>Win%</th>
                                              </tr>
                                           </thead>
                                           <tbody id="tab-3">
