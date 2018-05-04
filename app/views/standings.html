@@ -16,6 +16,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
 <script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 </head>
 <body onload="stdFunction('http://localhost:5000/api/record','std-table');"> 
@@ -27,8 +28,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="index.html"><h1><img src="images/nba-logo.png">NBA<span>Predictor</span></h1> </a>
 			</div>
@@ -36,6 +35,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					 <li><a href="index.html"><h4>Home</h4></a></li>
+ 					 <li><a href="teams.html"><h4>Teams</h4></a></li>
   					 <li><a href="standings.html"><h4>Standings</h4></a></li>
  					 <li><a href="stats.html"><h4>Stats</h4></a></li>
 
@@ -55,7 +55,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <th>Conference</th>
                                 <th>Win</th>
                                 <th>Loss</th>
-								<th>Pct</th>
+								<th>Win%</th>
                               </tr>
                             </thead>
                             <tbody id="std-table">
@@ -77,24 +77,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="copyright">
 						  <p>&copy; 2018 NBALeague. All Rights Reserved | Design by <a href="http://w3layouts.com/">W3layouts</a> </p>
 					</div>
-
-
-				<!--start-smoth-scrolling-->
-						<script type="text/javascript">
-									$(document).ready(function() {
-										/*
-										var defaults = {
-								  			containerID: 'toTop', // fading element id
-											containerHoverID: 'toTopHover', // fading element hover id
-											scrollSpeed: 1200,
-											easingType: 'linear' 
-								 		};
-										*/
-										
-										$().UItoTop({ easingType: 'easeOutQuart' });
-										
-									});
-								</script>
 		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 </body>
 </html>
