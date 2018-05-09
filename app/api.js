@@ -103,7 +103,7 @@ router.get('/schedule/today', function(req, res) {
         date = "0" + date;
     }
     var year = today.getFullYear();
-    var sql = "SELECT * FROM schedule WHERE date >= '" + year + "-" + month + "-" + date + "' ORDER BY date ASC LIMIT 5";
+    var sql = "SELECT * FROM schedule WHERE date == '" + year + "-" + month + "-" + date + "' ORDER BY date ASC LIMIT 5";
     var params = [];
     stats_query(sql, params, res)
 });

@@ -1,466 +1,214 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-   <head>
-      <title>PredictNBA</title>
-      <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-      <meta name="keywords" content="Basketball Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-         Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-      <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-      <link href="css/bootstrap-3.1.1.min.css" rel="stylesheet" type="text/css">
-      <!-- Custom Theme files -->
-      <link href="css/owl.carousel.css" rel="stylesheet" type="text/css" media="all" />
-      <link href="css/style.css" rel='stylesheet' type='text/css' />
-      <script src="js/responsiveslides.min.js"></script>
-      <script src="js/jquery.min.js"> </script>
-      <script type="text/javascript" src="js/move-top.js"></script>
-      <script type="text/javascript" src="js/easing.js"></script>
-      <script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
-      <script src="js/owl.carousel.js"></script>
-      <script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
-      <script type="text/javascript" src="js/main.js"></script>
-	  <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script-->
-      <!--/script-->
-   </head>
-   <body onload="scheduleFunction('http://localhost:5000/api/schedule','tab-1');">
-      <div class="container">
-         <div class="header" id="home">
-            <div class="subhead white">
-               <nav class="navbar navbar-default" role="navigation">
-                  <div class="navbar-header">
-                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                     <span class="sr-only">Toggle navigation</span>
-                     <span class="icon-bar"></span>
-                     </button>
-                     <a class="navbar-brand" href="index.html">
-                        <h1><img src="images/nba-logo.png">NBA<span>Predictor</span></h1>
-                     </a>
-                  </div>
-                  <!--/.navbar-header-->
-                  <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
-                     <ul class="nav navbar-nav">
-                        <li>
-                           <a href="index.html">
-                              <h4>Home</h4>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#about">
-                              <h4>About</h4>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="teams.html">
-                              <h4>Teams</h4>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="standings.html">
-                              <h4>Standings</h4>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="stats.html">
-                              <h4>Stats</h4>
-                           </a>
-                        </li>
-                     </ul>
-                  </div>
-                  <!--/.navbar-collapse-->
-                  <!--/.navbar-->
-               </nav>
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+
+    <!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- CUSTOM STYLESHEET -->
+    <link href="css/custom.css" rel="stylesheet">
+
+    <title>NBA Sentiment</title>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="col">
+                <a href="#team-target" type="button" class="btn btn-default btn-outline-primary" style="color:white">Teams</a>
+                <a href="#tweet-target" type="button" class="btn btn-default btn-outline-primary" style="color:white">Tweets</a>
+                <a href="#sent-target" type="button" class="btn btn-default btn-outline-primary" style="color:white">Sentiment</a>
             </div>
-         </div>
-         <!--/start-banner-->
-         <div class="banner">
-            <div class="banner-inner">
-               <div class="el-1">
-                  <h3>Eastern Conference</h3>
-                  </br>
-                  <div id="e1-111" class="el-111" onclick="popupFunction('http://localhost:5000/api/tor/roster','e1-11')">
-                     <!--popup container for team el-111-->
-                     <a href="#myModal-11" role="button" data-toggle="modal"><img src="images/raptors.png"></a>
-                     <div id="myModal-11" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
-                           <!-- Modal content-->
-                           <div class="modal-content">
-                              <div class="modal-header">
-                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                 <h4 class="modal-title">TORONTO RAPTORS</h4>
-                              </div>
-                              <div class="modal-body">
-                                 <table class="table">
-                                    <thead class="thead-inverse">
-                                    <thead>
-                                       <tr>
-                                          <th scope="col">No</th>
-                                          <th scope="col">Name</th>
-                                          <th scope="col">Position</th>
-                                          <th scope="col">Height</th>
-                                          <th scope="col">Weight</th>
-                                       </tr>
-                                    </thead>
-                                    <tbody id="e1-11">
-                                       <!--api call-->
-                                    </tbody>
-                                 </table>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="el-112" onclick="popupFunction('http://localhost:5000/api/bos/roster','e1-12')">
-                     <!--popup container for team el-112-->
-                     <a href="#myModal-12" role="button" data-toggle="modal"><img src="images/celtics.png"></a>
-                     <div id="myModal-12" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
-                           <!-- Modal content-->
-                           <div class="modal-content">
-                              <div class="modal-header">
-                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                 <h4 class="modal-title">BOSTON CELTICS</h4>
-                              </div>
-                              <div class="modal-body">
-                                 <table class="table">
-                                    <thead class="thead-inverse">
-                                    <thead>
-                                       <tr>
-                                          <th scope="col">No</th>
-                                          <th scope="col">Name</th>
-                                          <th scope="col">Position</th>
-                                          <th scope="col">Height</th>
-                                          <th scope="col">Weight</th>
-                                       </tr>
-                                    </thead>
-                                    <tbody id="e1-12">
-                                       <!--api call-->
-                                    </tbody>
-                                 </table>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="el-113" onclick="popupFunction('http://localhost:5000/api/ind/roster','e1-13')">
-                     <!--popup container for team el-113-->
-                     <a href="#myModal-13" role="button" data-toggle="modal"><img src="images/indiana.png"></a>
-                     <div id="myModal-13" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
-                           <!-- Modal content-->
-                           <div class="modal-content">
-                              <div class="modal-header">
-                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                 <h4 class="modal-title">INDIANA PACERS</h4>
-                              </div>
-                              <div class="modal-body">
-                                 <table class="table">
-                                    <thead class="thead-inverse">
-                                    <thead>
-                                       <tr>
-                                          <th scope="col">No</th>
-                                          <th scope="col">Name</th>
-                                          <th scope="col">Position</th>
-                                          <th scope="col">Height</th>
-                                          <th scope="col">Weight</th>
-                                       </tr>
-                                    </thead>
-                                    <tbody id="e1-13">
-                                       <!--api call-->
-                                    </tbody>
-                                 </table>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="el-114" onclick="popupFunction('http://localhost:5000/api/cle/roster','e1-14')">
-                     <!--popup container for team el-114-->
-                     <a href="#myModal-14" role="button" data-toggle="modal"><img src="images/cavaliers.png"></a>
-                     <div id="myModal-14" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
-                           <!-- Modal content-->
-                           <div class="modal-content">
-                              <div class="modal-header">
-                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                 <h4 class="modal-title14">CLEVELAND CAVALIERS</h4>
-                              </div>
-                              <div class="modal-body">
-                                 <table class="table">
-                                    <thead class="thead-inverse">
-                                    <thead>
-                                       <tr>
-                                          <th scope="col">No</th>
-                                          <th scope="col">Name</th>
-                                          <th scope="col">Position</th>
-                                          <th scope="col">Height</th>
-                                          <th scope="col">Weight</th>
-                                       </tr>
-                                    </thead>
-                                    <tbody id="e1-14">
-                                       <!--api call-->
-                                    </tbody>
-                                 </table>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="el-2">
-                  <h3>Western Conference</h3>
-                  </br>
-                  <div class="el-111" onclick="popupFunction('http://localhost:5000/api/hou/roster','e1-21')">
-                     <!--popup container for team el-111-->
-                     <a href="#myModal-21" role="button" data-toggle="modal"><img src="images/rockets.png"></a>
-                     <div id="myModal-21" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
-                           <!-- Modal content-->
-                           <div class="modal-content">
-                              <div class="modal-header">
-                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                 <h4 class="modal-title">HOUSTON ROCKETS</h4>
-                              </div>
-                              <div class="modal-body">
-                                 <table class="table">
-                                    <thead class="thead-inverse">
-                                    <thead>
-                                       <tr>
-                                          <th scope="col">No</th>
-                                          <th scope="col">Name</th>
-                                          <th scope="col">Position</th>
-                                          <th scope="col">Height</th>
-                                          <th scope="col">Weight</th>
-                                       </tr>
-                                    </thead>
-                                    <tbody id="e1-21">
-                                       <!--api call-->
-                                    </tbody>
-                                 </table>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="el-112" onclick="popupFunction('http://localhost:5000/api/gsw/roster','e1-22')">
-                     <!--popup container for team el-112-->
-                     <a href="#myModal-22" role="button" data-toggle="modal"><img src="images/goldenstate.png"></a>
-                     <div id="myModal-22" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
-                           <!-- Modal content-->
-                           <div class="modal-content">
-                              <div class="modal-header">
-                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                 <h4 class="modal-title">GOLDEN STATE WARRIORS</h4>
-                              </div>
-                              <div class="modal-body">
-                                 <table class="table">
-                                    <thead class="thead-inverse">
-                                    <thead>
-                                       <tr>
-                                          <th scope="col">No</th>
-                                          <th scope="col">Name</th>
-                                          <th scope="col">Position</th>
-                                          <th scope="col">Height</th>
-                                          <th scope="col">Weight</th>
-                                       </tr>
-                                    </thead>
-                                    <tbody id="e1-22">
-                                       <!--api call-->
-                                    </tbody>
-                                 </table>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="el-113" onclick="popupFunction('http://localhost:5000/api/por/roster','e1-23')">
-                     <!--popup container for team el-113-->
-                     <a href="#myModal-23" role="button" data-toggle="modal"><img src="images/portland.png"></a>
-                     <div id="myModal-23" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
-                           <!-- Modal content-->
-                           <div class="modal-content">
-                              <div class="modal-header">
-                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                 <h4 class="modal-title">PORTLAND TRAIL BLAZERS</h4>
-                              </div>
-                              <div class="modal-body">
-                                 <table class="table">
-                                    <thead class="thead-inverse">
-                                    <thead>
-                                       <tr>
-                                          <th scope="col">No</th>
-                                          <th scope="col">Name</th>
-                                          <th scope="col">Position</th>
-                                          <th scope="col">Height</th>
-                                          <th scope="col">Weight</th>
-                                       </tr>
-                                    </thead>
-                                    <tbody id="e1-23">
-                                       <!--api call-->
-                                    </tbody>
-                                 </table>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="el-114" onclick="popupFunction('http://localhost:5000/api/sas/roster','e1-24')">
-                     <!--popup container for team el-114-->
-                     <a href="#myModal-24" role="button" data-toggle="modal"><img src="images/sas.png"></a>
-                     <div id="myModal-24" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
-                           <!-- Modal content-->
-                           <div class="modal-content">
-                              <div class="modal-header">
-                                 <button type="button" class="close" id="close" data-dismiss="modal">&times;</button>
-                                 <h4 class="modal-title">SAN ANTONIO</h4>
-                              </div>
-                              <div class="modal-body">
-                                 <table class="table">
-                                    <thead class="thead-inverse">
-                                    <thead>
-                                       <tr>
-                                          <th scope="col">No</th>
-                                          <th scope="col">Name</th>
-                                          <th scope="col">Position</th>
-                                          <th scope="col">Height</th>
-                                          <th scope="col">Weight</th>
-                                       </tr>
-                                    </thead>
-                                    <tbody id="e1-24">
-                                       <!--api call-->
-                                    </tbody>
-                                 </table>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+            <div class="col"></div>
+            <div class="col">
+                <a href="api" type="button" class="btn btn-default btn-outline-primary" style="color:white; float: right;">API Documentation</a>
             </div>
-         </div>
-         <!--//end-banner-->
-         <!--/start-main-->
-         <div class="main-content">
-            <!--/soccer-inner-->
-            <div class="soccer-inner">
-               <!--/soccer-left-part-->
-               <div class="col-md-8 soccer-left-part">
-                  <!--/about-->
-                  <div class="about" id="about">
-                     <h3 class="tittle">About</h3>
-                     <div class="sap_tabs">
-                        <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
-                           <ul class="resp-tabs-list">
-                              <li class="resp-tab-item grid1" aria-controls="tab_item-0" role="tab" ><span>SCHEDULE</span></li>
-                              <li class="resp-tab-item grid2" aria-controls="tab_item-1" role="tab" onclick="tabFunction('http://localhost:5000/api/record/east','tab-2')"><span>LEAGUE TABLE : EASTERN CONFERENCE</span></li>
-                              <li class="resp-tab-item grid3" aria-controls="tab_item-1" role="tab" onclick="tabFunction('http://localhost:5000/api/record/west','tab-3')"><span>LEAGUE TABLE : WESTERN CONFERENCE</span></li>
-                           </ul>
-                           <div class="resp-tabs-container">
-                              <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
-                                 <div class="facts">
-                                    <div class="tab_list">
-                                       <table>
-                                          <thead>
-                                             <tr>
-                                                <th>Date | Time</th>
-                                                <th>Home_Team</th>
-                                                <th>Score</th>
-                                                <th>Visitor_Team</th>
-                                                <th>Score</th>
-                                             </tr>
-                                          </thead>
-                                          <tbody id="tab-1">
-                                             <!--api call for schedule-->
-                                          </tbody>
-                                       </table>
+        </div>
+    </nav>
+
+    <!-- JUMBOTRON COMPONENT -->
+    <div class="jumbotron">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col"></div>
+                <div class="col-5">
+                    <h1 class="text-white">NBA Twitter Sentiment</h1>
+                    <p class="text-white">Welcome! Our group has collected tweets for the 2017/18 season to see if there is a correlation between tweet sentiment and the league champions! Does having a higher sentiment show results? Take a look below!</p>
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN BODY -->
+    <body style="background-color:black; font-family: 'Questrial', sans-serif">
+        <div class="top-buffer">
+            <div class="container-fluid">
+                <div class="row text-secondary">
+                    <!-- WEST CONF TILES -->
+                    <div class="col" id="team-target">
+                        <h5 class="text-center">WESTERN CONFERENCE</h5>
+                        <div class="col" align="center">
+                            <!-- first two teams of western conference -->
+                            <div class="row">
+
+                                <!-- WEST TEAM 1 -->
+                                <div class="col">
+                                    <div id="inner-west1">
                                     </div>
-                                 </div>
-                              </div>
-                              <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1" >
-                                 <div class="facts">
-                                    <div class="tab_list">
-                                       <table>
-                                          <thead>
-                                             <tr>
-                                                <th>Team</th>
-                                                <th>Win</th>
-                                                <th>Loss</th>
-                                                <th>Win%</th>
-                                             </tr>
-                                          </thead>
-                                          <tbody  id="tab-2">
-                                             <!--api call for east-->
-                                          </tbody>
-                                       </table>
+
+                                </div>
+
+                                <!-- WEST TEAM 2 -->
+                                <div class="col">
+                                    <div id="inner-west2">
                                     </div>
-                                 </div>
-                              </div>
-                              <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-2">
-                                 <div class="facts">
-                                    <div class="tab_list">
-                                       <table>
-                                          <thead>
-                                             <tr>
-                                                <th>Team</th>
-                                                <th>Win</th>
-                                                <th>Loss</th>
-                                                <th>Win%</th>
-                                             </tr>
-                                          </thead>
-                                          <tbody id="tab-3">
-                                             <!--api call for west-->
-                                          </tbody>
-                                       </table>
+                                </div>
+                            </div>
+
+                            <!-- last two teams of western conference -->
+                            <div class="row">
+                                <!-- WEST TEAM 3 -->
+                                <div class="col">
+                                    <div id="inner-west3">
                                     </div>
-                                 </div>
-                              </div>
-                           </div>
+                                </div>
+
+                                <!-- WEST TEAM 4 -->
+                                <div class="col">
+                                    <div id="inner-west4">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                     </div>
-                  </div>
-                  <!--//about-->
-               </div>
-               <!--//soccer-left-part-->
-               <!--/soccer-right-part-->
-               <div class="col-md-4 soccer-right-part">
-                  <!--//accordation_menu-->
-                  <div class="list_vertical">
-                     <section class="accordation_menu">
-                        <input id="label-2" name="lida" type="radio" checked="">
-                        <label for="label-2" id="item2"><i class="icon-leaf" id="i2"></i>Recent Tweets<i class="icon-plus-sign i-right1"></i><i class="icon-minus-sign i-right2"></i></label>
-                        <div class="content" id="a2">
-                           <div class="scrollbar" id="style-2">
-                              <a class="twitter-timeline" href="https://twitter.com/NBA?ref_src=twsrc%5Etfw">Tweets by NBA</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                           </div>
+                    </div>
+
+                    <!-- EAST CONF TILES -->
+                    <div class="col">
+                        <h5 class="text-secondary text-center">EASTERN CONFERENCE</h5>
+                        <div class="col" align="center">
+                            <!-- first two teams of western conference -->
+                            <div class="row">
+
+                                <!-- EAST TEAM 1 -->
+                                <div class="col">
+                                    <div id="inner-east1">
+                                    </div>
+                                </div>
+
+                                <!-- EAST TEAM 2 -->
+                                <div class="col">
+                                    <div id="inner-east2">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- last two teams of western conference -->
+                            <div class="row">
+
+                                <!-- EAST TEAM 3 -->
+                                <div class="col">
+                                    <div id="inner-east3">
+                                    </div>
+                                </div>
+
+                                <!-- EAST TEAM 4 -->
+                                <div class="col">
+                                    <div id="inner-east4">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                  </div>
-                  </section>
-               </div>
-               <!--//accordation_menu-->
-               <!--//connect-->
+                    </div>
+                </div>
+
+                <!-- SCHEDULE AND TWEET STREAM PANELS -->
+                <br>
+                <div class="row top-buffer bottom-buffer">
+                    <!-- GAME SCHEDULE -->
+                    <div class="col-5">
+                        <h5 class="text-center text-secondary">SCHEDULE</h5>
+                        <div class="panel">
+                            <table class="table div-sched" id="inner-sched">
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Home</th>
+                                    <th>Visitor</th>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="col"></div>
+
+                    <!-- TWEET STREAM -->
+                    <div class="col-6" id="tweet-target">
+                        <div class="panel panel-info">
+                            <h5 class="text-center text-secondary">TWITTER STREAM</h5>
+                            <a class="twitter-timeline" data-lang="en" data-height="400" data-theme="dark" href="https://twitter.com/cpsc462/lists/nba-tweets?ref_src=twsrc%5Etfw">A Twitter List by cpsc462</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            <div class="panel-body pre-scrollable">
+                                <div id="inner-tweet">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SENTIMENT CHART -->
+                <h5 class="text-center text-secondary" id="sent-target">SENTIMENT</h5>
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col-10">
+                        <div id="chart-div">
+                        </div>
+                    </div>
+                    <div class="col"></div>
+                </div>
+
             </div>
-            <!--//soccer-right-part-->
-            <div class="clearfix"> </div>
-         </div>
-      </div>
-      <!--//soccer-inner-->
-      </div>
-      <!--/start-footer-section-->
-      <div class="footer-section">
-         <div class="container">
-            <div class="footer-grids">
-               <div class="clearfix"></div>
+        </div>
+        <div class="bottom-buffer"></div>
+
+        <div class="modal fade" id="teamDialogBox" tabindex="-1" role="dialog" >
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <div id="modal-teamLogo"></div>
+                </div>
+                <div class="modal-body">
+                    <table id="teamInfo" class="table">
+                        <thead>
+                           <tr>
+                              <th scope="col">No</th>
+                              <th scope="col">Name</th>
+                              <th scope="col">Position</th>
+                              <th scope="col">Height</th>
+                              <th scope="col">Weight</th>
+                           </tr>
+                        </thead>
+                        <tbody></tbody>
+                </div>
+              </div>
             </div>
-         </div>
-      </div>
-      <!--//end-footer-section-->
-      <!--/start-copyright-section-->
-      <div class="copyright">
-         <p>&copy; 2018 NBALeague. All Rights Reserved | Design by <a href="http://w3layouts.com/">W3layouts</a> </p>
-      </div>
-      <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-   </body>
+          </div>
+    </body>
+
+    <!-- REQUIRED JS FOR BOOTSTRAP COMPONENTS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- REQUIRED JS FOR AMCHARTS -->
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+
+    <!-- FONT IMPORT -->
+    <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+
+    <!-- CUSTOM JS SCRIPT IMPORTS -->
+    <script src="js/landing.js" type="text/javascript"></script>
 </html>

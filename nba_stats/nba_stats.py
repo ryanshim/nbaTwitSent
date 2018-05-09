@@ -103,6 +103,6 @@ def populate_schedule():
     print('\tDone')
 
 if __name__ == '__main__':
-    #populate_teams()
-    #populate_players()
+    populate_teams()
+    populate_players()
     populate_schedule()
